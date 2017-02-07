@@ -9,6 +9,7 @@ $http.get(`states.json`)
   });
  })
   $scope.register = () => {
+
     console.log("im register")
     AuthFactory.getter($scope.user_email,$scope.user_password)
     .then ((data)=> {
