@@ -21,7 +21,10 @@ capstone.config(($routeProvider,$locationProvider,localStorageServiceProvider )=
   })
   .when("/publicresults",{
     controller: "PublicresultsCtrl",
-    templateUrl: "/partials/publicresults.html"
+    templateUrl: "/partials/publicresults.html",
+    resolve: {doctors:(doctorFactory)=>{
+      return doctorFactory.getDoctor()
+    }}
   })
 })
 
