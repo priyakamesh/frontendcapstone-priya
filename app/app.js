@@ -7,6 +7,20 @@ capstone.config(($routeProvider,$locationProvider,localStorageServiceProvider )=
     storageBucket: "frontendcapstone.appspot.com",
     messagingSenderId: "303345732104"
   });
+  const checkForAuth1 = {
+      checkForAuth ($location) {
+        const authReady = firebase.auth().onAuthStateChanged(user => {
+          authReady()
+          console.log(authReady)
+          if (user) {
+            $location.url('/privateview')
+          }
+          else{
+            $location.url('/login')
+          }
+        })
+      }
+    }
   $locationProvider.hashPrefix("")
   localStorageServiceProvider
     .setPrefix('capstoneApp');
@@ -33,5 +47,14 @@ capstone.config(($routeProvider,$locationProvider,localStorageServiceProvider )=
   .when("/login",{
     controller: "LoginCtrl",
     templateUrl: "/partials/login.html"
+  })
+  .when("/privateview",{
+    controller: "PrivateviewCtrl",
+    templateUrl: "/partials/privateview.html",
+    resolve: checkForAuth1
+  })
+  .when("/logout",{
+    controller: "LogoutCtrl",
+    templateUrl: "/partials/logout.html"
   })
 })

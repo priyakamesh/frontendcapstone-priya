@@ -1,0 +1,1 @@
+capstone.controller("PrivateviewCtrl", function(){})
