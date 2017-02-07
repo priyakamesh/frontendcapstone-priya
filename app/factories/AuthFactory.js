@@ -9,6 +9,15 @@ capstone.factory ("AuthFactory", function (){
 
       })
     },
+    setter : (user_email,user_password)=>{
+
+      return firebase.auth().signInWithEmailAndPassword(user_email,user_password)
+      .then((data)=>{})
+      .catch ((data)=>{
+        alert(data.message)
+
+      })
+    },
 
 
     getUid:()=> {
