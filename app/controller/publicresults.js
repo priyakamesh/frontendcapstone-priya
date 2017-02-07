@@ -1,0 +1,1 @@
+capstone.controller("PublicresultsCtrl", function (){})
