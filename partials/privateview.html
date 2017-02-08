@@ -1,1 +1,31 @@
 <h1>private view</h1>
+
+
+<div class="row">
+        <div class="col s3">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">{{doctorList.profile.title}} {{doctorList.profile.first_name}} {{doctorList.profile.last_name}}</span>
+              Speciality :
+              <p ng-repeat = "(key,value) in doctorSpeciality"> *{{value.name}}</p>
+
+              <!-- <div ng-repeat = "(key,value) in doctorSpecialities">{{key}}</div> -->
+              Office Address:
+              <div  ng-repeat = "(key,value) in doctorPractices">
+
+
+                <div> *{{value.visit_address.street}},
+                 {{value.visit_address.city}},
+                 {{value.visit_address.zip}}</div>
+
+                  <a target="_blank" href="https://www.google.com/maps/">Directions</a>
+              </div>
+              <div class="card-action">
+
+              <button ng-click = "docSave()">Save to my profile</button>
+            </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
