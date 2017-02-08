@@ -41,7 +41,7 @@ capstone.factory("doctorFactory", function($http){
                       lat = data.data.results[0].geometry.location.lat
                       long = data.data.results[0].geometry.location.lng
                       console.log(lat , long)
-                      return $http.get(`https://api.betterdoctor.com/2016-03-01/doctors?specialty_uid=${userSpeciality}&insurance_provider=${userInsurance}&location=${lat}%2C${long}%2C10&skip=0&limit=10&user_key=cc89a9786eb0b9f8f2a731a37cb8800e`)
+                      return $http.get(`https://api.betterdoctor.com/2016-03-01/doctors?specialty_uid=${userSpeciality}&insurance_provider=${userInsurance}&location=${lat}%2C${long}%2C5&skip=0&limit=10&user_key=cc89a9786eb0b9f8f2a731a37cb8800e`)
 
                     }).then((data)=>{
                         doctorList = data.data.data

@@ -7,16 +7,16 @@ capstone.config(($routeProvider,$locationProvider,localStorageServiceProvider )=
     storageBucket: "frontendcapstone.appspot.com",
     messagingSenderId: "303345732104"
   });
-  const checkForAuth = {
-      checkForAuth ($location) {
-        const authReady = firebase.auth().onAuthStateChanged(user => {
-          authReady()
-          if (!user) {
-            $location.url('/login')
-          }
-        })
-      }
-    }
+  // const checkForAuth = {
+  //     checkForAuth ($location) {
+  //       const authReady = firebase.auth().onAuthStateChanged(user => {
+  //         authReady()
+  //         if (!user) {
+  //           $location.url('/login')
+  //         }
+  //       })
+  //     }
+  //   }
   // const checkForAuth = {checkAuth : ($location,$scope)=> {
 
   //         if (firebase.auth().currentUser === null) {
@@ -55,7 +55,11 @@ capstone.config(($routeProvider,$locationProvider,localStorageServiceProvider )=
   .when("/privateview/:dockey",{
     controller: "PrivateviewCtrl",
     templateUrl: "/partials/privateview.html",
-    resolve: checkForAuth
+    resolve: {user:(AuthFactory,$location)=>{
+      return AuthFactory.getUser().catch(()=>{
+        $location.url("/login")
+      })
+    }}
   })
   .when("/logout",{
     controller: "LogoutCtrl",
@@ -64,6 +68,11 @@ capstone.config(($routeProvider,$locationProvider,localStorageServiceProvider )=
   .when("/profile",{
     controller: "ProfileCtrl",
     templateUrl: "partials/profile.html",
-     resolve: checkForAuth
+    resolve: {user:(AuthFactory,$location)=>{
+      return AuthFactory.getUser().catch(()=>{
+        $location.url("/login")
+      })
+    }}
+     // resolve: checkForAuth
   })
 })

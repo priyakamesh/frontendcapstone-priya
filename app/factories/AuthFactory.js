@@ -1,5 +1,5 @@
 
-capstone.factory ("AuthFactory", function (){
+capstone.factory ("AuthFactory", function ($q) {
   return {getter :(user_email,user_password) => {
     console.log(user_email,user_password)
     return firebase.auth().createUserWithEmailAndPassword(user_email,user_password)
@@ -22,6 +22,24 @@ capstone.factory ("AuthFactory", function (){
 
     getUid:()=> {
       return UID = firebase.auth().currentUser.uid
+    },
+    getUser() {
+      console.log("hi")
+      return $q((resolve, reject) => {
+        console.log('hi2')
+        const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
+          unsubscribe();
+          console.log(user)
+          if (user) {
+            resolve(user);
+            // $scope.$apply()
+            console.log("im resolved")
+          } else {
+            reject("Not logged in");
+            console.log("im rejected")
+          }
+        }); //end const unsubscribe
+      }); //end return getUser
     }
   }
 })

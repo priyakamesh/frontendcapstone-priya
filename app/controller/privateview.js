@@ -40,18 +40,22 @@ capstone.controller("PrivateviewCtrl", function(doctorFactory,AuthFactory,$scope
 //       $location.path(`/privateview/${$scope.mainKey}`)
 //     })
 // }
-// $scope.uid = AuthFactory.getUid()
+$scope.uid = AuthFactory.getUid()
 $scope.docSave = ()=>{
   console.log("im docSave")
-  $location.path("#/profile")
-  // console.log($scope.uid)
-  // $http.post(`https://frontendcapstone.firebaseio.com/${$scope.uid}/favoriteDoc/.json`,
-  // {
-  //   Name : {$scope.doctorList.profile.title , $scope.doctorList.profile.first_name, $scope.doctorList.profile.last_name},
-  //   Speciality : $scope.doctorSpeciality,
-  //   office_address : $scope.doctorPractices
-  // })
 
+  console.log($scope.uid)
+  $http.post(`https://frontendcapstone.firebaseio.com/users/${$scope.uid}/favoriteDoc/.json`,
+  {
+    Title : $scope.doctorList.profile.title ,
+    first_name: $scope.doctorList.profile.first_name,
+    last_name:$scope.doctorList.profile.last_name,
+    Speciality : $scope.doctorSpeciality,
+    office_address : $scope.doctorPractices
+  })
+  .then((data)=>{
+    $location.path("#/profile")
+  })
   // console.log($scope.favoriteDoc)
 }
 })
