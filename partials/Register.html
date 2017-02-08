@@ -6,51 +6,51 @@
         <div class="row">
           <div class="input-field col s6">
 
-            <input  id="first_name" type="text" class="validate" ng_model = "firstName">
+            <input  id="first_name" type="text" class="validate" ng_model = "firstName"  required>
             <label for="first_name">First Name</label>
           </div>
           <div class="input-field col s6">
-            <input id="last_name" type="text" class="validate" ng_model = "lastName">
+            <input id="last_name" type="text" class="validate" ng_model = "lastName"  required>
             <label for="last_name">Last Name</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s6">
-            <input  type="text" class="validate" ng_model = "user_email">
+            <input  type="text" class="validate" ng_model = "user_email" required>
             <label for="email" data-error="wrong" data-success="right">Email</label>
           </div>
         <!-- </div>
         <div class="row"> -->
           <div class="input-field col s6">
-            <input id="email" type="email" class="validate">
+            <input id="email" type="email" class="validate"  required>
             <label for="email" data-error="wrong" data-success="right">Confirm Email</label>
           </div>
         </div>
         <div class="row">
-          <div class="input-field col s6">
-            <input id="password" type="password" class="validate" ng_model = "user_password">
+          <div class="input-field col s6" >
+            <input id="password" type="password" class="validate" ng_model = "user_password" required>
             <label for="password">Password</label>
           </div>
 
           <div class="input-field col s6">
-            <input  type="date" class="datepicker" ng-model="user_dob">
+            <input  type="date" class="datepicker" ng-model="user_dob" required>
 
           </div>
         </div>
         <div class="row">
           <div class="input-field col s6">
-            <input type="text" ng-model = "user_addressLine1">
+            <input type="text" ng-model = "user_addressLine1" required>
             <label for="addressLine1">Address Line-1</label>
           </div>
           <div class="input-field col s6">
-            <input type="text" ng-model = "user_addressLine2">
+            <input type="text" ng-model = "user_addressLine2"  optional>
             <label for="addressLine2">Address Line-2</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s6">
             <input type="text" ng-model = "user_city">
-            <label for="city">City</label>
+            <label for="city">City(optional)</label>
           </div>
         <!-- </div>
 
@@ -59,15 +59,15 @@
             <div class="row"> -->
               <div class="input-field col s3">
                 <input type="text" id="autocomplete-input" class="autocomplete" ng_model = "user_state">
-                <label for="autocomplete-input">State</label>
+                <label for="autocomplete-input">State(optional)</label>
               </div>
           <div class="input-field col s3">
-            <input type="text" ng-model = "user_zipcode">
+            <input type="text" ng-model = "user_zipcode" required>
             <label for="zipcode">Zipcode</label>
           </div>
         </div>
 
-      <button type = "submit" class="waves-effect waves-light btn" ng-click="register()">Register</button>
+      <button type = "submit" class="waves-effect waves-light btn">Register</button>
 
   </form>
 </div>

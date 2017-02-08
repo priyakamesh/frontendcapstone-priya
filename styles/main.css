@@ -7,3 +7,13 @@ nav {
 #center {
   margin-left: 100px;
 }
+
+input:required:focus {
+  border: 1px solid red;
+  outline: none;
+}
+
+/*.backImg {
+  background-image: url("https://static01.nyt.com/images/2016/07/05/health/well_doctor/well_doctor-tmagArticle.jpg" alt="Unsplashed background img 1");
+  position: relative;
+}*/
