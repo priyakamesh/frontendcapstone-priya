@@ -20,17 +20,18 @@ capstone.controller("PrivateviewCtrl", function(doctorFactory,AuthFactory,$scope
   console.log($scope.doctorPractices)
 
 
-//   var lat ={}
-//   for (var latkey in $scope.doctorPractices){
-//    lat = $scope.doctorPractices[latkey].lat
-//    long = $scope.doctorPractices[latkey].lon
-//   }
+// https://www.google.com/maps/@{{lat}},{{long}}z
+// $scope.getPosition = (key)=>{
 
+// for (var practKey in $scope.doctorPractices){
+//    $scope.lat = $scope.doctorPractices[practKey].lat
+//    $scope.long = $scope.doctorPractices[practKey].lon
 
-//   $scope.lat = lat
 //   console.log($scope.lat)
-//   $scope.long = long
+
 //   console.log($scope.long)
+// }
+// }
 //   if (($scope.lat !== null)&&($scope.long !== null)){
 //     $http.get (`https://maps.googleapis.com/maps/api/geocode/json?latlng=${$scope.lat},${$scope.long}&key=AIzaSyCrXqSQFiIX6Xvdz6LEgxHHL9ERKyToE40 `)
 //     .then((data)=>{
@@ -42,6 +43,7 @@ capstone.controller("PrivateviewCtrl", function(doctorFactory,AuthFactory,$scope
 // $scope.uid = AuthFactory.getUid()
 $scope.docSave = ()=>{
   console.log("im docSave")
+  $location.path("#/profile")
   // console.log($scope.uid)
   // $http.post(`https://frontendcapstone.firebaseio.com/${$scope.uid}/favoriteDoc/.json`,
   // {

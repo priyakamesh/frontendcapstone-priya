@@ -1,6 +1,10 @@
 capstone.controller("PublicresultsCtrl", function ($scope,doctors,$location){
 
   $scope.doctorList = doctors
+  if($scope.doctorList === []){
+    alert("Sorry no doctors found in the area")
+
+  }
   console.log($scope.doctorList)
   var doctorSpecialities = {}
   for (var speckey in $scope.doctorList){

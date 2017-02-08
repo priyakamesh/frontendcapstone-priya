@@ -17,8 +17,9 @@
                 <div> *{{value.visit_address.street}},
                  {{value.visit_address.city}},
                  {{value.visit_address.zip}}</div>
-
-                  <a target="_blank" href="https://www.google.com/maps/">Directions</a>
+                  <div>{{value.lat}},{{value.lon}}</div>
+                  <a target="_blank" href="https://www.google.com/maps/?q={{value.lat}},{{value.lon}}"
+                  >Directions</a>
               </div>
               <div class="card-action">
 
