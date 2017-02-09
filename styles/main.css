@@ -17,3 +17,8 @@ input:required:focus {
   background-image: url("https://static01.nyt.com/images/2016/07/05/health/well_doctor/well_doctor-tmagArticle.jpg" alt="Unsplashed background img 1");
   position: relative;
 }*/
+
+
+.borderBlock {
+  border: 1px solid lightblue;
+}
