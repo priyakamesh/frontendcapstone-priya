@@ -22,3 +22,6 @@ input:required:focus {
 .borderBlock {
   border: 1px solid lightblue;
 }
+.upperCase {
+  text-transform: uppercase;
+}

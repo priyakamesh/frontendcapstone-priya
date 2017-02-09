@@ -1,4 +1,4 @@
-capstone.controller("PublicresultsCtrl", function ($scope,doctors,$location,user){
+capstone.controller("PublicresultsCtrl", function ($scope,doctors,$location,$http,user){
   $scope.doctorList = doctors
   console.log(doctors)
   if($scope.doctorList === null){
@@ -18,8 +18,8 @@ capstone.controller("PublicresultsCtrl", function ($scope,doctors,$location,user
   for (var locKey in $scope.doctorList){
     doctorPractices = $scope.doctorList[locKey].practices
   }
-  // $scope.doctorPractices = Object.values(doctorPractices)
-  // console.log($scope.doctorPractices)
+  $scope.doctorPractices = Object.values(doctorPractices)
+  console.log($scope.doctorPractices)
   // $scope.myDoctor = (key)=>{
   //   console.log(key)
   //   $scope.myDoctor = $scope.doctorList[key].practices
@@ -27,11 +27,12 @@ capstone.controller("PublicresultsCtrl", function ($scope,doctors,$location,user
   //   $location.path("/privateview")
   // }
 $scope.uid = user
-$scope.moreInfo = (value)=>{
+$scope.moreInfo = (value,key)=>{
   console.log("value" , value)
   $scope.currentValue = value
-  $scope.doctorPractices = Object.values(doctorPractices)
-  console.log($scope.doctorPractices)
+  $scope.key = key
+  // $scope.doctorPractices = Object.values(doctorPractices)
+  // console.log($scope.doctorPractices)
       console.log("i have a user")
       $('#modal2').modal({
           dismissible: true, // Modal can be dismissed by clicking outside of the modal
@@ -80,15 +81,16 @@ $scope.moreLogin = ()=>{
   }
 
 
-  $scope.docSave = ()=>{
+  $scope.saveDoc = ()=>{
   console.log("im docSave")
+  console.log($scope.key)
+  console.log(user.uid)
 
-  console.log($scope.uid)
-  $http.post(`https://frontendcapstone.firebaseio.com/users/${$scope.uid}/favoriteDoc/.json`,
+  $http.post(`https://frontendcapstone.firebaseio.com/users/${user.uid}/favoriteDoc/.json`,
   {
-    Title : $scope.doctorList.profile.title ,
-    first_name: $scope.doctorList.profile.first_name,
-    last_name:$scope.doctorList.profile.last_name,
+    Title : $scope.doctorList[$scope.key].profile.title,
+    first_name: $scope.doctorList[$scope.key].profile.first_name,
+    last_name:$scope.doctorList[$scope.key].profile.last_name,
     Speciality : $scope.doctorSpeciality,
     office_address : $scope.doctorPractices
   })
