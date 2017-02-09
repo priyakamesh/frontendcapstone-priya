@@ -10,11 +10,23 @@
 
               <!-- <div ng-repeat = "(key,value) in doctorSpecialities">{{key}}</div> -->
               <p>{{value.profile.bio}}</p>
-              <div class="card-action">
-              <a ng-href="#/privateview/{{key}}">More info</a>
-            </div>
+              <!-- <div class="card-action"> -->
+              <button ng-click = "moreInfo()"  class="waves-effect waves-light btn activator" data-target="modal1" href="#modal1"><i class="material-icons left">more_vert</i>More info</button>
+               <div ng-if = "uid">Hi{{key}}
+                    </div>
+              </div>
+              <!-- <a ng-href="#/privateview/{{key}}" class="activator"><i class="material-icons left">more_vert</i>More info</a> -->
+            <!-- </div> -->
             </div>
 
           </div>
-        </div>
+
       </div>
+
+
+ <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Please <a ng-click = "loginLink()">Login</a>/<a ng-click = "registerLink()">Register</a> to view more details</h4>
+      <p ng-click = "cancel()">Cancel</p>
+    </div>
+  </div>

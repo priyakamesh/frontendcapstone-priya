@@ -32,7 +32,7 @@ $http.get(`states.json`)
                               state: $scope.user_state,
                               zipcode: $scope.user_zipcode}
     })
-        $location.path(`/privateView`)
+        $location.path(`/publicresults`)
 })
 
 }
