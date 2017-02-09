@@ -40,9 +40,14 @@ capstone.config(($routeProvider,$locationProvider,localStorageServiceProvider )=
   .when("/publicresults",{
     controller: "PublicresultsCtrl",
     templateUrl: "/partials/publicresults.html",
-    resolve: {doctors:(doctorFactory)=>{
-      return doctorFactory.getDoctor()
-    }}
+    resolve: {
+              doctors:(doctorFactory)=>{
+                return doctorFactory.getDoctor()
+              },
+              user:(AuthFactory)=>{
+                return AuthFactory.getUid()
+              }
+            }
   })
   .when("/register",{
     controller: "RegisterCtrl",

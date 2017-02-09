@@ -1,5 +1,5 @@
 capstone.controller("ProfileCtrl", function($http,$scope,AuthFactory){
-  $scope.uid = AuthFactory.getUid()
+  $scope.uid = AuthFactory.getUid().uid
   console.log($scope.uid)
   $http.get(`https://frontendcapstone.firebaseio.com/users/${$scope.uid}/favoriteDoc.json`)
   .then((data)=>{
