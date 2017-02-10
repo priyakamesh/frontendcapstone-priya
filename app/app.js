@@ -1,5 +1,5 @@
-const capstone = angular.module("capstoneApp",["ngRoute","LocalStorageModule"])
-capstone.config(($routeProvider,$locationProvider,localStorageServiceProvider )=>{
+const capstone = angular.module("capstoneApp",["ngRoute","xeditable"])
+capstone.config(($routeProvider,$locationProvider )=>{
   firebase.initializeApp({
     apiKey: "AIzaSyBiwwJ_-OG8_NDU9rwESzwSf9HNVUcA_I8",
     authDomain: "frontendcapstone.firebaseapp.com",
@@ -7,27 +7,8 @@ capstone.config(($routeProvider,$locationProvider,localStorageServiceProvider )=
     storageBucket: "frontendcapstone.appspot.com",
     messagingSenderId: "303345732104"
   });
-  // const checkForAuth = {
-  //     checkForAuth ($location) {
-  //       const authReady = firebase.auth().onAuthStateChanged(user => {
-  //         authReady()
-  //         if (!user) {
-  //           $location.url('/login')
-  //         }
-  //       })
-  //     }
-  //   }
-  // const checkForAuth = {checkAuth : ($location,$scope)=> {
-
-  //         if (firebase.auth().currentUser === null) {
-  //           $location.path('/login')
-  //           // $scope.$apply()
-  //         }
-  //       }}
 
   $locationProvider.hashPrefix("")
-  localStorageServiceProvider
-    .setPrefix('capstoneApp');
   $routeProvider
   .when("/",{
     controller: "PublicCtrl",
@@ -80,4 +61,7 @@ capstone.config(($routeProvider,$locationProvider,localStorageServiceProvider )=
     }}
      // resolve: checkForAuth
   })
+//   .run(function(editableOptions) {
+//   editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
+// })
 })

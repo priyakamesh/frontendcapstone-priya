@@ -95,7 +95,7 @@ $scope.moreLogin = ()=>{
     office_address : $scope.doctorPractices
   })
   .then((data)=>{
-    $location.path("#/profile")
+    $location.path("/profile")
   })
   // console.log($scope.favoriteDoc)
 }
