@@ -692,6 +692,9 @@ null,
 "pathology-clinical-informatics"
 :
 null,
+"pediatrician"
+:
+null,
 "pediatric-allergist"
 :
 null,
@@ -765,9 +768,6 @@ null,
 :
 null,
 "pediatric-urologist"
-:
-null,
-"pediatrician"
 :
 null,
 "pediatrics-clinical-laboratory-immunology"

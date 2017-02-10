@@ -9,7 +9,7 @@ nav {
 }
 
 input:required:focus {
-  border: 1px solid red;
+  border: 1px solid teal;
   outline: none;
 }
 
@@ -24,4 +24,12 @@ input:required:focus {
 }
 .upperCase {
   text-transform: uppercase;
+}
+
+.ownInfo {
+    margin-left: 50px;
+    padding-left:  50px;
+    margin-bottom: 10px;
+    border: 1px solid blue;
+    box-sizing: border-box;
 }

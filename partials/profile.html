@@ -1,14 +1,60 @@
- <div>
-  <h4><a href = "#" editable-text = "user.Firstname">{{user.Firstname || 'empty'}}</a><a href="#" editable-text = "user.Lastname"> {{user.Lastname || 'empty'}}</h4>
-   <p>{{userDob}}</p>
-  <div>Email: <a href="#" editable-email="user.email">{{ user.email || 'empty' }}</a></div>
-  <div>Address :<a href="#" editable-text = "user.Address.Address1">{{user.Address.Address1||'empty'}}</a></div>
-  <div><a href="#" editable-text = "user.Address.Address2">{{user.Address.Address2||'empty'}}</a></div>
-  <div><a href="#" editable-text = "user.Address.City">{{user.Address.City||'empty'}}</a></div>
-  <div><a href="#" editable-text = "user.Address.state">{{user.Address.state||'empty'}}</a></div>
-  <div><a href="#" editable-text = "user.Address.zipcode">{{user.Address.zipcode||'empty'}}</a></div>
- <button ng-click = "updateInfo()">Save your Information</button></div>
+ <div class="row">
+   <div class="card col s12">
+    <div class="card-content">
+    <img src="{{user.imageUrl}}">
+      <h4 class="card-title">{{user.Firstname}}{{user.Lastname}}</h4>
+       <p>{{userDob}}</p>
+      <div>Email:{{ user.email }}</div>
+      <div  class="ownInfo">Address :<div>{{user.Address.Address1}}
+      {{user.Address.Address2}}
+     {{user.Address.City}}
+      {{user.Address.state}}
+      {{user.Address.zipcode}}</div>
+      </div>
+     <button class="btn" data-target = "modal3"  ng-click = "updateInfo()">Edit your Information</button>
+     <!-- Modal3 -->
+      <div id="modal3" class="modal">
+          <div class="modal-content">
+            <div class="row">
+              <form class="col s12">
+                 <div class="row">
+                    <div class="input-field col s6">
+                      <input id="first_name" type="text" ng-model="user.Firstname">
+                    </div>
+                    <div class="input-field col s6">
+                      <input id="first_name" type="text" ng-model="user.Lastname">
+                    </div>
+                    <div class="input-field col s6">
+                      <input id="first_name" type="text" ng-model="user.Address.Address1">
+                    </div>
+                    <div class="input-field col s6">
+                      <input id="first_name" type="text" ng-model="user.Address.Address2">
+                    </div>
+                    <div class="input-field col s3">
+                      <input id="first_name" type="text" ng-model="user.Address.City">
+                    </div>
+                    <div class="input-field col s3">
+                      <input id="first_name" type="text" ng-model="user.Address.state">
+                    </div>
+                    <div class="input-field col s3">
+                      <input id="first_name" type="text" ng-model="user.Address.zipcode">
+                    </div>
+                </div>
+                <img src="{{user.imageUrl}}" id="myImg">
+                <input type="file" name="file" id="fileInput">
 
+              </form>
+
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn" ng-click = "save()">Save</button>
+          </div>
+      </div>
+    </div>
+   </div>
+
+</div>
 
 
 <div class="row">

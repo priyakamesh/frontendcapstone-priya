@@ -96,6 +96,7 @@ $scope.moreLogin = ()=>{
   })
   .then((data)=>{
     $location.path("/profile")
+    $("#modal2").modal("close")
   })
   // console.log($scope.favoriteDoc)
 }

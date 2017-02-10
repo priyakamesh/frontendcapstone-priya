@@ -1,5 +1,5 @@
 capstone.controller ("PublicCtrl", function ($http,$scope,doctorFactory,$location) {
-
+ $('.parallax').parallax();
   $scope.speciality = doctorFactory.getSpeciality();
   // $('#autocomplete-inputSpeciality').autocomplete({
   //               data: $scope.speciality,
