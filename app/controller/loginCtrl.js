@@ -10,7 +10,16 @@ capstone.controller("LoginCtrl", function($scope,$location,AuthFactory){
 
       Materialize.toast("logged in", 1000)
       $location.path(`/publicresults`)
-      $scope.$apply()
+      // $scope.$apply()
     })
+  }
+  $scope.forgotPassword = ()=>{
+    firebase.auth().sendPasswordResetEmail($scope.user_email)
+      .then(function() {
+         alert("Email sent.... check your inbox")
+        })
+        .catch( function(error) {
+          alert("Email not found")
+        });
   }
 })
