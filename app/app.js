@@ -1,5 +1,5 @@
-const capstone = angular.module("capstoneApp",["ngRoute","LocalStorageModule"])
-capstone.config(($routeProvider,$locationProvider,localStorageServiceProvider )=>{
+const capstone = angular.module("capstoneApp",["ngRoute","xeditable"])
+capstone.config(($routeProvider,$locationProvider )=>{
   firebase.initializeApp({
     apiKey: "AIzaSyBiwwJ_-OG8_NDU9rwESzwSf9HNVUcA_I8",
     authDomain: "frontendcapstone.firebaseapp.com",
@@ -7,17 +7,8 @@ capstone.config(($routeProvider,$locationProvider,localStorageServiceProvider )=
     storageBucket: "frontendcapstone.appspot.com",
     messagingSenderId: "303345732104"
   });
-  // const checkForAuth = {checkAuth : ($location,$scope)=> {
-
-  //         if (firebase.auth().currentUser === null) {
-  //           $location.path('/login')
-  //           // $scope.$apply()
-  //         }
-  //       }}
 
   $locationProvider.hashPrefix("")
-  localStorageServiceProvider
-    .setPrefix('capstoneApp');
   $routeProvider
   .when("/",{
     controller: "PublicCtrl",
@@ -30,9 +21,14 @@ capstone.config(($routeProvider,$locationProvider,localStorageServiceProvider )=
   .when("/publicresults",{
     controller: "PublicresultsCtrl",
     templateUrl: "/partials/publicresults.html",
-    resolve: {doctors:(doctorFactory)=>{
-      return doctorFactory.getDoctor()
-    }}
+    resolve: {
+              doctors:(doctorFactory)=>{
+                return doctorFactory.getDoctor()
+              },
+              user:(AuthFactory)=>{
+                return AuthFactory.getUid()
+              }
+            }
   })
   .when("/register",{
     controller: "RegisterCtrl",
@@ -45,10 +41,27 @@ capstone.config(($routeProvider,$locationProvider,localStorageServiceProvider )=
   .when("/privateview/:dockey",{
     controller: "PrivateviewCtrl",
     templateUrl: "/partials/privateview.html",
-    // resolve: checkForAuth
+    resolve: {user:(AuthFactory,$location)=>{
+      return AuthFactory.getUser().catch(()=>{
+        $location.url("/login")
+      })
+    }}
   })
   .when("/logout",{
     controller: "LogoutCtrl",
     templateUrl: "/partials/logout.html"
   })
+  .when("/profile",{
+    controller: "ProfileCtrl",
+    templateUrl: "partials/profile.html",
+    resolve: {user:(AuthFactory,$location)=>{
+      return AuthFactory.getUser().catch(()=>{
+        $location.url("/login")
+      })
+    }}
+     // resolve: checkForAuth
+  })
+//   .run(function(editableOptions) {
+//   editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
+// })
 })

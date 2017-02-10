@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="/lib/materialize/dist/css/materialize.min.css">
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/lib/angular-xeditable/dist/css/xeditable.min.css">
   <link rel="stylesheet" type="text/css" href="/styles/main.css">
   <title>Capstone</title>
 </head>
@@ -13,6 +16,7 @@
       <div class="nav-wrapper">
         <a href="#">SEARCH DOC</a>
         <ul class="right hide-on-med-and-down">
+          <li card-panel hoverable><a href="#/profile">My Profile</a></li>
           <li card-panel hoverable><a href="#/login">Login</a></li>
           <li card-panel hoverable><a href="#/register">Register</a></li>
           <li card-panel hoverable><a href="#/logout">Logout</a></li>
@@ -27,6 +31,7 @@
   <script src="/lib/angular/angular.js"></script>
   <script src="/lib/angular-local-storage/dist/angular-local-storage.min.js"></script>
   <script src="/lib/angular-route/angular-route.min.js"></script>
+  <script src="/lib/angular-xeditable/dist/js/xeditable.min.js"></script>
   <script src="/lib/firebase/firebase.js"></script>
   <script src="/lib/materialize/dist/js/materialize.js"></script>
   <script src="/app/app.js"></script>
@@ -38,5 +43,6 @@
   <script src="/app/controller/loginCtrl.js"></script>
   <script src="/app/controller/privateview.js"></script>
   <script src="/app/controller/logoutCtrl.js"></script>
+  <script src="/app/controller/profileCtrl.js"></script>
 </body>
 </html>

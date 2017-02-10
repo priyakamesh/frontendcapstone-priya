@@ -1,8 +1,6 @@
 <h1>List of Doctors</h1>
-
-
 <div class="row">
-        <div class="col s3"   ng-repeat = "(key,value) in doctorList">
+        <div class="col s12"   ng-repeat = "(key,value) in doctorList">
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
               <span class="card-title">{{value.profile.title}} {{value.profile.first_name}} {{value.profile.last_name}}</span>
@@ -10,11 +8,52 @@
 
               <!-- <div ng-repeat = "(key,value) in doctorSpecialities">{{key}}</div> -->
               <p>{{value.profile.bio}}</p>
-              <div class="card-action">
-              <a href="#/privateview/{{key}}">More info</a>
-            </div>
-            </div>
+              <!-- <div class="card-action"> -->
+              <button ng-click = "moreLogin()" ng-if = "!uid" class="waves-effect waves-light btn" data-target="modal1"><i class="material-icons left">more_vert</i>More info</button>
+              <button ng-click = "moreInfo(value,key)" ng-if = "uid" class="waves-effect waves-light btn" data-target="modal2"><i class="material-icons left">more_vert</i>MoreInfo</button>
+              </div>
+              <!-- <a ng-href="#/privateview/{{key}}" class="activator"><i class="material-icons left">more_vert</i>More info</a> -->
+            <!-- </div> -->
 
           </div>
+      </div>
+
+</div>
+
+
+ <div id="modal1" class="modal">
+  <div class="modal-content">
+
+      <h4>Please <a ng-click = "loginLink()">Login</a>/<a ng-click = "registerLink()">Register</a> to view more details</h4>
+      <p ng-click = "cancel()">Cancel</p>
+
+   <!-- </div> -->
+
+  </div>
+</div>
+
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <div class="row">
+        <div class="col s12">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text borderBlock" ng-repeat = "(key1,value) in currentValue.practices">
+            <i class="material-icons">location_on</i><a target="_blank" href="https://www.google.com/maps/?q={{value.lat}},{{value.lon}}"
+                  >{{value.visit_address.street}}, {{value.visit_address.street2}},{{value.visit_address.city}}
+            {{value.visit_address.zip}}</a>
+            <div><i class="material-icons">phone</i>
+            <div ng-repeat = "(key2,value) in currentValue.practices[key1].phones">{{value.type}} : {{value.number}}</div></div>
+            <a target="_blank" href="{{value.website}}">
+            {{value.website}}</a>
+            <p class="upperCase">Accepts New Patient: {{value.accepts_new_patients}}</p>
+            <div class="card-title">Insurance Accepted</div>
+            <p ng-repeat = "each in currentValue.insurances">{{each.insurance_plan.name}}</p>
+            <div class="card-action">
+              <button class="btn" ng-click = "saveDoc()">Save to your profile</button>
+            </div>
+          </div>
+          <button class="btn" ng-click = "cancelInfo()">Cancel</button>
         </div>
       </div>
+  </div>
+</div>

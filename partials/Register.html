@@ -33,7 +33,7 @@
           </div>
 
           <div class="input-field col s6">
-            <input  type="date" class="datepicker" ng-model="user_dob" required>
+            <input  type="date" class="datepicker" ng-model="user_dob" required min="1940-01-01" max="{{date | date:'yyyy-MM-dd'}}">
 
           </div>
         </div>
@@ -52,21 +52,19 @@
             <input type="text" ng-model = "user_city">
             <label for="city">City(optional)</label>
           </div>
-        <!-- </div>
-
-        <div class="row">
-          <div class="col s6">
-            <div class="row"> -->
-              <div class="input-field col s3">
-                <input type="text" id="autocomplete-input" class="autocomplete" ng_model = "user_state">
-                <label for="autocomplete-input">State(optional)</label>
-              </div>
+          <div class="input-field col s3">
+            <input type="text" id="autocomplete-input" class="autocomplete" ng_model = "user_state">
+            <label for="autocomplete-input">State(optional)</label>
+          </div>
           <div class="input-field col s3">
             <input type="text" ng-model = "user_zipcode" required>
             <label for="zipcode">Zipcode</label>
           </div>
         </div>
-
+        <div class="picture">
+          <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSbuNesTVALkVJwmDPaSJUEgV45w5Cr6yraSIvedhvmQP5elWRfgw" id="myImg">
+          <input type="file" placeholder="Upload your profile pic" id="fileInput">
+        </div>
       <button type = "submit" class="waves-effect waves-light btn">Register</button>
 
   </form>

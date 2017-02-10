@@ -9,7 +9,7 @@ capstone.controller("LoginCtrl", function($scope,$location,AuthFactory){
     .then((data)=>{
 
       Materialize.toast("logged in", 1000)
-      $location.path("/privateview")
+      $location.path(`/publicresults`)
       $scope.$apply()
     })
   }

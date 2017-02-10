@@ -1,46 +1,34 @@
 
-  <div class="backImg">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-
         <!-- <div class="row center"> -->
+<div class="parallax-container">
+    <div class="parallax"><img src="https://static01.nyt.com/images/2016/07/05/health/well_doctor/well_doctor-tmagArticle.jpg" alt="Unsplashed background img 1"></div>
 
-
-        <form class="col s12" ng-submit = "getDoctor()">
+  <div class="row center-align">
+        <form class="col s12 " ng-submit = "getDoctor()">
           <h2>Find your doctor</h2>
-          <!-- <div ng-repeat="(key,value) in specialities|filter: speciality"></div> -->
-            <div class="input-field col s6">
-                <label for="autocomplete-input">Speciality</label>
-                <input type="text" class="autocomplete" id="autocomplete-inputSpeciality" ng_model = "speciality">
+          <div class="row center-align">
+            <div class="input-field col s3">
+                <input type="text" class="autocomplete" id="autocomplete-inputSpeciality" ng_model = "speciality" required>
+                <label for="autocomplete-inputSpeciality">SPECIALITY</label>
             </div>
-
-          <div class="input-field col s6">
-                <label for="autocomplete-input">Insurance</label>
-                <input type="text" class="autocomplete" id="autocomplete-inputInsurance" ng_model = "user_insurance">
+            <div class="input-field col s3">
+                <input type="text" class="autocomplete" id="autocomplete-inputInsurance" ng_model = "user_insurance" required>
+                <label for="autocomplete-inputInsurance">INSURANCE</label>
             </div>
-          <div class="input-field col s3">
-              <label for="autocomplete-input">State</label>
-              <input type="text" id="autocomplete-inputStates" class="autocomplete" ng_model = "user_state" >
-          </div>
-          <div class="input-field col s6">
-                <label for = "zipcode">Zipcode</label>
-                <input type="text" name="zipcode" ng-model="zipcode">
+            <div class="input-field col s3">
+                  <input type="text" name="zipcode" ng-model="zipcode" id="zipcode"  required pattern ="[0-9]{5}">
+                   <label for = "zipcode">ZIPCODE</label>
+            </div>
           </div>
           <input type="submit" value="Submit">
         </form>
 
-      </div>
-    </div>
-      <!-- <div>
-        <img src="https://static01.nyt.com/images/2016/07/05/health/well_doctor/well_doctor-tmagArticle.jpg" alt="Unsplashed background img 1">
-
-      </div> -->
 </div>
-<!-- <footer class="page-footer white">
+</div>
+<footer class="page-footer white">
     <div class="footer-copyright">
       <div class="container">
       Powered by <a class="brown-text text-lighten-1" target="_blank" href="https://developer.betterdoctor.com">Better Doctor</a>
       </div>
     </div>
-  </footer> -->
+  </footer>
