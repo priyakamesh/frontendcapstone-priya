@@ -45,3 +45,24 @@ input:required:focus {
 .uppercase {
   text-transform: uppercase;
 }
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
+.parallax-container {
+      height: 700px;
+    }
+.footer1 {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
