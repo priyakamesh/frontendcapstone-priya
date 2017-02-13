@@ -10,20 +10,39 @@
   <title>Capstone</title>
 </head>
 <body ng-app="capstoneApp">
-
   <div class="navbar-fixed">
+
     <nav>
+  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
       <div class="nav-wrapper">
-        <a href="#"><img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSvNm9z19dvrk-jhIlfWb8Xz11bC9rq15Gm840ZRMrM0n9qtHs" class="circle responsive-img logo">SEARCH DOC</a>
-        <ul class="right hide-on-med-and-down">
+        <a href="#" class="brand-logo center"><img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSvNm9z19dvrk-jhIlfWb8Xz11bC9rq15Gm840ZRMrM0n9qtHs" class="circle responsive-img logo ">SEARCH DOC</a>
+        <ul class="right hide-on-med-and-down" id="nav-mobile">
           <li card-panel hoverable><a href="#/profile" class='profileButton'>My Profile</a></li>
           <li card-panel hoverable><a href="#/login" class="logInButton">Login</a></li>
           <li card-panel hoverable><a href="#/register" class="registerButton">Register</a></li>
           <li card-panel hoverable><a href="#/logout" class="logoutButton" data-target="modal4">Logout</a></li>
         </ul>
-      </div>
-    </nav>
+       </div>
+        </nav>
+
   </div>
+        <ul id="slide-out" class="side-nav">
+          <li>
+            <a href="#/profile" class='profileButton'>My Profile</a>
+          </li>
+          <li>
+            <a href="#/logout" class="logoutButton" data-target="modal4">Logout</a>
+          </li>
+          <li>
+            <a href="#/login" class="logInButton">Login</a>
+          </li>
+          <li>
+            <a href="#/register" class="registerButton">Register</a>
+          </li>
+
+        </ul>
+
+
   <div ng-view></div>
   <script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
    <script src="/lib/jquery/dist/jquery.js"></script>
