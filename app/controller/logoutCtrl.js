@@ -1,4 +1,5 @@
 capstone.controller("LogoutCtrl", function($scope){
+  // $(".button-collapse").sideNav();
 $('#modal4').modal({
           dismissible: true, // Modal can be dismissed by clicking outside of the modal
           opacity: .5, // Opacity of modal background

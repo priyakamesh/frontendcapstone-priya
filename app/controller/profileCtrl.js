@@ -1,9 +1,11 @@
 capstone.controller("ProfileCtrl", function($http,$scope,AuthFactory,$location){
+  // $(".button-collapse").sideNav();
   $('.collapsible').collapsible({
     // accordion: false, // A setting that changes the collapsible behavior to expandable instead of the default accordion style
     // onOpen: function(el) { alert('Open'); }, // Callback for Collapsible open
     // onClose: function(el) { alert('Closed'); } // Callback for Collapsible close
   });
+
 
   $scope.uid = AuthFactory.getUid().uid
   console.log($scope.uid)
@@ -41,6 +43,7 @@ $scope.date = new Date();
     console.log($scope.key)
     $http.delete(`https://frontendcapstone.firebaseio.com/users/${$scope.uid}/favoriteDoc/${key1}.json`)
     .then((data)=>{
+      console.log(data)
       $(`#${$scope.key}`).remove()
     })
   }

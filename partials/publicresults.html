@@ -1,6 +1,6 @@
 <h1>List of Doctors</h1>
 <div class="row">
-        <div class="col s12 m7"   ng-repeat = "(key,value) in doctorList">
+        <div class="col s12 m9"   ng-repeat = "(key,value) in doctorList">
           <div class="card  red lighten-3 left">
             <div class="card-content">
               <h5 class="card-title heading">{{value.profile.title}} {{value.profile.first_name}} {{value.profile.last_name}}</h5>
@@ -20,7 +20,10 @@
       </div>
 
 </div>
-
+<div class="footer1">
+      Powered by <a class="brown-text text-lighten-1" target="_blank" href="https://developer.betterdoctor.com">Better Doctor</a>
+      <!-- </div> -->
+    </div>
 
  <div id="modal1" class="modal">
   <div class="modal-content">
@@ -39,9 +42,9 @@
     <a ng-click = "cancelInfo()"><i class="material-icons right">close</i></a>
         <div class="col s12">
 
-          <div class="card red lighten-3">
+          <div class="card ">
 
-            <div class="card-content" ng-repeat = "(key1,value) in currentValue.practices">
+            <div class="card-content red lighten-3" ng-repeat = "(key1,value) in currentValue.practices">
             <div class = "borderBlock"><i class="material-icons">location_on</i><a target="_blank" href="https://www.google.com/maps/?q={{value.lat}},{{value.lon}}"
                   >{{value.visit_address.street}}, {{value.visit_address.street2}},{{value.visit_address.city}}
             {{value.visit_address.zip}}</a></div>
@@ -61,8 +64,3 @@
       </div>
   </div>
 </div>
-
- <div class="footer1">
-      Powered by <a class="brown-text text-lighten-1" target="_blank" href="https://developer.betterdoctor.com">Better Doctor</a>
-      <!-- </div> -->
-    </div>

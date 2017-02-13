@@ -3,24 +3,24 @@
 <div class="parallax-container">
     <div class="parallax"><img src="https://static01.nyt.com/images/2016/07/05/health/well_doctor/well_doctor-tmagArticle.jpg" alt="Unsplashed background img 1"></div>
 
-  <div class="row center-align">
-        <form class="col s12 " ng-submit = "getDoctor()">
+  <div class="row center-align margin">
+        <form ng-submit = "getDoctor()">
           <h2>Find your doctor</h2>
           <div class="row center-align">
-            <div class="input-field col s3">
-                <input type="text" class="autocomplete" id="autocomplete-inputSpeciality" ng_model = "speciality" required>
+            <div class="input-field col s12 m3">
+                <input type="text" class="autocomplete white" id="autocomplete-inputSpeciality" ng_model = "speciality" required>
                 <label for="autocomplete-inputSpeciality">SPECIALITY</label>
             </div>
-            <div class="input-field col s3">
-                <input type="text" class="autocomplete" id="autocomplete-inputInsurance" ng_model = "user_insurance" required>
+            <div class="input-field col s12 m3">
+                <input type="text" class="autocomplete white" id="autocomplete-inputInsurance" ng_model = "user_insurance" required>
                 <label for="autocomplete-inputInsurance">INSURANCE</label>
             </div>
-            <div class="input-field col s2">
-                  <input type="text" name="zipcode" ng-model="zipcode" id="zipcode"  required pattern ="[0-9]{5}">
+            <div class="input-field col s12 m3">
+                  <input type="text" name="zipcode" ng-model="zipcode" id="zipcode" class="white" required pattern ="[0-9]{5}">
                    <label for = "zipcode">ZIPCODE</label>
             </div>
-            <div class="input-field col s3">
-              <input type="submit" value="SEARCH" class="btn">
+            <div class="input-field col s12 m3">
+              <input type="submit" value="SEARCH" class="btn  red lighten-2">
             </div>
           </div>
 
