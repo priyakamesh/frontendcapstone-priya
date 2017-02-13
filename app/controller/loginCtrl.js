@@ -9,8 +9,8 @@ capstone.controller("LoginCtrl", function($scope,$location,AuthFactory){
     .then((data)=>{
 
       Materialize.toast("logged in", 1000)
-      $location.path(`/publicresults`)
-      // $scope.$apply()
+      $location.url(`/`)
+      $scope.$apply()
     })
   }
   $scope.forgotPassword = ()=>{

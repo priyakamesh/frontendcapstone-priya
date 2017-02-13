@@ -1,4 +1,10 @@
 capstone.controller("ProfileCtrl", function($http,$scope,AuthFactory,$location){
+  $('.collapsible').collapsible({
+    // accordion: false, // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    // onOpen: function(el) { alert('Open'); }, // Callback for Collapsible open
+    // onClose: function(el) { alert('Closed'); } // Callback for Collapsible close
+  });
+
   $scope.uid = AuthFactory.getUid().uid
   console.log($scope.uid)
   $http.get(`https://frontendcapstone.firebaseio.com/users/${$scope.uid}.json`)
@@ -108,5 +114,6 @@ $scope.date = new Date();
   })
   $("#modal3").modal("close")
  }
+
 
 })
