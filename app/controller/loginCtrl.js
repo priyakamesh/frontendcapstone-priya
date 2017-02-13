@@ -11,6 +11,10 @@ capstone.controller("LoginCtrl", function($scope,$location,AuthFactory){
       Materialize.toast("logged in", 1000)
       $location.url(`/`)
       $scope.$apply()
+       $('.logoutButton').removeClass('ng-hide')
+       $('.profileButton').removeClass('ng-hide')
+       $('.logInButton').addClass("ng-hide")
+       $('.registerButton').addClass("ng-hide")
     })
   }
   $scope.forgotPassword = ()=>{

@@ -7,16 +7,39 @@ capstone.config(($routeProvider,$locationProvider )=>{
     storageBucket: "frontendcapstone.appspot.com",
     messagingSenderId: "303345732104"
   });
+  const showHideLogout = {
+    showHideLogout: function() {
+       const authReady = firebase.auth().onAuthStateChanged(user => {
+         authReady()
+           if (!user) {
+             $('.logoutButton').addClass('ng-hide')
+             $('.profileButton').addClass('ng-hide')
+             $('.logInButton').removeClass("ng-hide")
+             $('.registerButton').removeClass("ng-hide")
+           } else if (user) {
+             $('.logoutButton').removeClass("ng-hide")
+             $('.profileButton').removeClass("ng-hide")
+             $('.logInButton').addClass("ng-hide")
+             $('.registerButton').addClass("ng-hide")
+           }
+
+      }) //authReady
+
+    }
+  } //showHideLogout
+
 
   $locationProvider.hashPrefix("")
   $routeProvider
   .when("/",{
     controller: "PublicCtrl",
-    templateUrl: "/partials/public.html"
+    templateUrl: "/partials/public.html",
+    resolve: showHideLogout
   })
   .when ("/register",{
     controller: "RegisterCtrl",
-    templateUrl: "/partials/Register.html"
+    templateUrl: "/partials/Register.html",
+    resolve: showHideLogout
   })
   .when("/publicresults",{
     controller: "PublicresultsCtrl",
@@ -28,15 +51,16 @@ capstone.config(($routeProvider,$locationProvider )=>{
               user:(AuthFactory)=>{
                 return AuthFactory.getUid()
               }
-            }
+            },showHideLogout
   })
-  .when("/register",{
-    controller: "RegisterCtrl",
-    templateUrl: "/partials/Register.html"
-  })
+  // .when("/register",{
+  //   controller: "RegisterCtrl",
+  //   templateUrl: "/partials/Register.html"
+  // })
   .when("/login",{
     controller: "LoginCtrl",
-    templateUrl: "/partials/login.html"
+    templateUrl: "/partials/login.html",
+    resolve: showHideLogout
   })
   .when("/privateview/:dockey",{
     controller: "PrivateviewCtrl",
@@ -49,7 +73,8 @@ capstone.config(($routeProvider,$locationProvider )=>{
   })
   .when("/logout",{
     controller: "LogoutCtrl",
-    templateUrl: "/partials/logout.html"
+    templateUrl: "/partials/logout.html",
+    resolve: showHideLogout
   })
   .when("/profile",{
     controller: "ProfileCtrl",
@@ -58,7 +83,7 @@ capstone.config(($routeProvider,$locationProvider )=>{
       return AuthFactory.getUser().catch(()=>{
         $location.url("/login")
       })
-    }}
+    }}, showHideLogout
      // resolve: checkForAuth
   })
 //   .run(function(editableOptions) {

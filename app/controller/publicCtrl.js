@@ -14,8 +14,13 @@ capstone.controller ("PublicCtrl", function ($http,$scope,doctorFactory,$locatio
     doctorFactory.getDoctorlist()
     .then((data)=>{$location.path("/publicresults")})
 
-     //  $scope.uid =  AuthFactory.getUid().uid
+      $scope.uid =  AuthFactory.getUid().uid
+      if (uid !== "") {
+        $('.logoutButton').removeClass('ng-hide')
+         $('.profileButton').removeClass('ng-hide')
+         $('.logInButton').addClass("ng-hide")
+         $('.registerButton').addClass("ng-hide")
      //  console.log($scope.uid)
-
+      }
   }
 })
