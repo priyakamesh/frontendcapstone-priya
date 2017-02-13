@@ -59,7 +59,7 @@ $scope.date = new Date();
                               state: $scope.user_state,
                               zipcode: $scope.user_zipcode}
     })
-        $location.path(`/publicresults`)
+        $location.path(`/`)
 })
 
 }

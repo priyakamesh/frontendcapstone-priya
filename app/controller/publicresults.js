@@ -1,11 +1,12 @@
 capstone.controller("PublicresultsCtrl", function ($scope,doctors,$location,$http,user){
   $scope.doctorList = doctors
   console.log(doctors)
-  if($scope.doctorList === null){
+  if($scope.doctorList.length === 0){
     alert("Sorry no doctors found in the area")
-
+    $location.path("/")
   }
   console.log($scope.doctorList)
+
   var doctorSpecialities = {}
   for (var speckey in $scope.doctorList){
     doctorSpecialities = $scope.doctorList[speckey].specialties
@@ -20,12 +21,6 @@ capstone.controller("PublicresultsCtrl", function ($scope,doctors,$location,$htt
   }
   $scope.doctorPractices = Object.values(doctorPractices)
   console.log($scope.doctorPractices)
-  // $scope.myDoctor = (key)=>{
-  //   console.log(key)
-  //   $scope.myDoctor = $scope.doctorList[key].practices
-  //   console.log($scope.myDoctor)
-  //   $location.path("/privateview")
-  // }
 $scope.uid = user
 $scope.moreInfo = (value,key)=>{
   console.log("value" , value)
@@ -100,4 +95,5 @@ $scope.moreLogin = ()=>{
   })
   // console.log($scope.favoriteDoc)
 }
+
 })

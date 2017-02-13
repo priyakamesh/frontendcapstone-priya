@@ -1,10 +1,7 @@
-capstone.controller ("PublicCtrl", function ($http,$scope,doctorFactory,$location) {
+capstone.controller ("PublicCtrl", function ($http,$scope,doctorFactory,$location,AuthFactory) {
+
  $('.parallax').parallax();
-  $scope.speciality = doctorFactory.getSpeciality();
-  // $('#autocomplete-inputSpeciality').autocomplete({
-  //               data: $scope.speciality,
-  //               limit: 10 // The max amount of results that can be shown at once. Default: Infinity.
-  //               });
+ $scope.speciality = doctorFactory.getSpeciality();
   $scope.insurance = doctorFactory.getInsurance();
   $scope.getDoctor = ()=>{
     $scope.user_speciality = doctorFactory.getuserSpeciality($scope.speciality)
@@ -17,6 +14,13 @@ capstone.controller ("PublicCtrl", function ($http,$scope,doctorFactory,$locatio
     doctorFactory.getDoctorlist()
     .then((data)=>{$location.path("/publicresults")})
 
-
+      $scope.uid =  AuthFactory.getUid().uid
+      if (uid !== "") {
+        $('.logoutButton').removeClass('ng-hide')
+         $('.profileButton').removeClass('ng-hide')
+         $('.logInButton').addClass("ng-hide")
+         $('.registerButton').addClass("ng-hide")
+     //  console.log($scope.uid)
+      }
   }
 })
