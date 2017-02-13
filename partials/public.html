@@ -7,19 +7,19 @@
         <form ng-submit = "getDoctor()">
           <h2>Find your doctor</h2>
           <div class="row center-align">
-            <div class="input-field col s7 ">
+            <div class="input-field col s12 m3">
                 <input type="text" class="autocomplete white" id="autocomplete-inputSpeciality" ng_model = "speciality" required>
                 <label for="autocomplete-inputSpeciality">SPECIALITY</label>
             </div>
-            <div class="input-field col s7">
+            <div class="input-field col s12 m3">
                 <input type="text" class="autocomplete white" id="autocomplete-inputInsurance" ng_model = "user_insurance" required>
                 <label for="autocomplete-inputInsurance">INSURANCE</label>
             </div>
-            <div class="input-field col s7">
+            <div class="input-field col s12 m3">
                   <input type="text" name="zipcode" ng-model="zipcode" id="zipcode" class="white" required pattern ="[0-9]{5}">
                    <label for = "zipcode">ZIPCODE</label>
             </div>
-            <div class="input-field col s7">
+            <div class="input-field col s12 m3">
               <input type="submit" value="SEARCH" class="btn  red lighten-2">
             </div>
           </div>
