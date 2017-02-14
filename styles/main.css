@@ -69,3 +69,9 @@ input:required:focus {
   background-color: #efefef;
   text-align: center;
 }
+.alert {
+  padding-top: 10px;
+  margin-top: 10px;
+  font-size: 20px;
+  text-shadow: 0 0 3px #FF0000;
+}
