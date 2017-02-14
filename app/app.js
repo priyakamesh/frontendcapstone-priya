@@ -1,4 +1,4 @@
-const capstone = angular.module("capstoneApp",["ngRoute","xeditable"])
+const capstone = angular.module("capstoneApp",["ngRoute","xeditable",'growlNotifications'])
 capstone.config(($routeProvider,$locationProvider )=>{
   firebase.initializeApp({
     apiKey: "AIzaSyBiwwJ_-OG8_NDU9rwESzwSf9HNVUcA_I8",
