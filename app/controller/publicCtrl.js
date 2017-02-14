@@ -17,12 +17,13 @@ $(".alert").addClass("ng-hide")
     doctorFactory.getDoctorlist()
     .then((data)=>{
       console.log(data)
+      $location.path("/publicresults")
       if(data.length === 0) {
         $(".alert").removeClass("ng-hide")
       }
-      else {
-      $location.path("/publicresults")
-    }
+
+
+
     })
 
       $scope.uid =  AuthFactory.getUid().uid

@@ -19,7 +19,7 @@
       <div class="nav-wrapper">
         <a href="#" class="brand-logo center"><img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSvNm9z19dvrk-jhIlfWb8Xz11bC9rq15Gm840ZRMrM0n9qtHs" class="circle responsive-img logo ">SEARCH DOC</a>
         <ul class="right hide-on-med-and-down" id="nav-mobile">
-          <li card-panel hoverable><a href="#/profile" class='profileButton dropdown-button' data-activates='dropdown1'><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ7Gb-hGMBaRVGc61GNlf_zypFaNXQDfWNGLbDVCfKv6nSy_9hBsQ" class="circle responsive-img logo"></a></li>
+          <li card-panel hoverable><a href="#/profile" class='profileButton dropdown-button' data-beloworigin="true" data-activates='dropdown1'><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ7Gb-hGMBaRVGc61GNlf_zypFaNXQDfWNGLbDVCfKv6nSy_9hBsQ" class="circle responsive-img logo"></a></li>
           <li card-panel hoverable><a href="#/login" class="logInButton">Login</a></li>
           <li card-panel hoverable><a href="#/register" class="registerButton">Register</a></li>
           <!-- <li card-panel hoverable><a href="#/logout" class="logoutButton" data-target="modal4">Logout</a></li> -->
@@ -29,9 +29,11 @@
 
   </div>
         <ul id='dropdown1' class='dropdown-content'>
+          <li><a href="#/profile">My Profile</a></li>
+          <li class="divider"></li>
           <li><a href="#/logout">Logout</a></li>
           <li class="divider"></li>
-          <li><a href="#/profile">My Profile</a></li>
+          <li><a href="#/favorite">Doctors List</a></li>
          </ul>
         <ul id="slide-out" class="side-nav">
 
@@ -72,7 +74,7 @@
   <script src="/app/controller/publicresults.js"></script>
   <script src="/app/controller/registerCtrl.js"></script>
   <script src="/app/controller/loginCtrl.js"></script>
-  <script src="/app/controller/privateview.js"></script>
+  <script src="/app/controller/favoritectrl.js"></script>
   <script src="/app/controller/logoutCtrl.js"></script>
   <script src="/app/controller/profileCtrl.js"></script>
 </body>

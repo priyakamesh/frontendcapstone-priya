@@ -10,8 +10,8 @@ capstone.controller("LoginCtrl", function($scope,$location,AuthFactory){
       console.log(data)
       if(!data.message){
           Materialize.toast("logged in", 1000)
-          $location.url(`/publicresults`)
-          $scope.$apply()
+          $location.url("/publicresults")
+          // $scope.$apply()
 
        $('.logoutButton').removeClass('ng-hide')
        $('.profileButton').removeClass('ng-hide')
