@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap.min.css"> -->
   <link rel="stylesheet" type="text/css" href="/lib/materialize/dist/css/materialize.min.css">
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="/lib/angular-xeditable/dist/css/xeditable.min.css">
+
   <link rel="stylesheet" type="text/css" href="/styles/main.css">
    <link rel="icon" type="image" href="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSvNm9z19dvrk-jhIlfWb8Xz11bC9rq15Gm840ZRMrM0n9qtHs" sizes="16x16">
   <title>Capstone</title>
@@ -18,18 +19,23 @@
       <div class="nav-wrapper">
         <a href="#" class="brand-logo center"><img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSvNm9z19dvrk-jhIlfWb8Xz11bC9rq15Gm840ZRMrM0n9qtHs" class="circle responsive-img logo ">SEARCH DOC</a>
         <ul class="right hide-on-med-and-down" id="nav-mobile">
-          <li card-panel hoverable><a href="#/profile" class='profileButton'>My Profile</a></li>
+          <li card-panel hoverable><a href="#/profile" class='profileButton dropdown-button' data-activates='dropdown1'><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ7Gb-hGMBaRVGc61GNlf_zypFaNXQDfWNGLbDVCfKv6nSy_9hBsQ" class="circle responsive-img logo"></a></li>
           <li card-panel hoverable><a href="#/login" class="logInButton">Login</a></li>
           <li card-panel hoverable><a href="#/register" class="registerButton">Register</a></li>
-          <li card-panel hoverable><a href="#/logout" class="logoutButton" data-target="modal4">Logout</a></li>
+          <!-- <li card-panel hoverable><a href="#/logout" class="logoutButton" data-target="modal4">Logout</a></li> -->
         </ul>
        </div>
         </nav>
 
   </div>
 
-
+        <ul id='dropdown1' class='dropdown-content'>
+          <li><a href="#/logout">Logout</a></li>
+          <li class="divider"></li>
+          <li><a href="#/profile">My Profile</a></li>
+         </ul>
         <ul id="slide-out" class="side-nav">
+
           <li>
             <a href="#/profile" class='profileButton'>My Profile</a>
           </li>
@@ -54,7 +60,8 @@
   <script src="/lib/angular-growl-notifications/dist/angular-growl-notifications.js"></script>
   <!-- <script src="/lib/angular-local-storage/dist/angular-local-storage.min.js"></script> -->
   <script src="/lib/angular-route/angular-route.min.js"></script>
-  <script src="/lib/angular-xeditable/dist/js/xeditable.min.js"></script>
+  <!-- <script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script> -->
+  <!-- <script src="/lib/bootstrap/js/alert.js"></script> -->
   <script src="/lib/firebase/firebase.js"></script>
   <script src="/lib/materialize/dist/js/materialize.js"></script>
   <script src="/app/app.js"></script>

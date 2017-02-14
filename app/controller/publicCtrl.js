@@ -4,6 +4,8 @@ capstone.controller ("PublicCtrl", function ($http,$scope,doctorFactory,$locatio
  $('.parallax').parallax();
  $scope.speciality = doctorFactory.getSpeciality();
   $scope.insurance = doctorFactory.getInsurance();
+  // $scope.insuranceNames = Object.keys($scope.insurance)
+  console.log($scope.insurance)
   $scope.getDoctor = ()=>{
     $scope.user_speciality = doctorFactory.getuserSpeciality($scope.speciality)
 
