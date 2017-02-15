@@ -24,6 +24,7 @@ $(".alert").addClass("ng-hide")
       }
       else{
       $location.path("/publicresults")
+      // $scope.$apply()
     }
     })
 

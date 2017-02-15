@@ -26,7 +26,7 @@ $scope.date = new Date();
   $http.get(`https://frontendcapstone.firebaseio.com/users/${$scope.uid}/favoriteDoc.json`)
   .then((data)=>{
     $scope.doctorList = data.data
-    console.log($scope.doctorList)
+    console.log("doctorList",$scope.doctorList)
 
    var doctorSpecialities = {}
   for (var key in $scope.doctorList){

@@ -1,4 +1,4 @@
-const capstone = angular.module("capstoneApp",["ngRoute",'growlNotifications'])
+const capstone = angular.module("capstoneApp",["ngRoute",'growlNotifications','ngMap'])
 capstone.config(($routeProvider,$locationProvider )=>{
   firebase.initializeApp({
     apiKey: "AIzaSyBiwwJ_-OG8_NDU9rwESzwSf9HNVUcA_I8",
@@ -7,8 +7,8 @@ capstone.config(($routeProvider,$locationProvider )=>{
     storageBucket: "frontendcapstone.appspot.com",
     messagingSenderId: "303345732104"
   });
-  const showHideLogout = {
-    showHideLogout: function() {
+  const showHideLogout ={
+     function() {
        const authReady = firebase.auth().onAuthStateChanged(user => {
          authReady()
            if (!user) {
@@ -26,7 +26,7 @@ capstone.config(($routeProvider,$locationProvider )=>{
       }) //authReady
 
     }
-  } //showHideLogout
+   }//showHideLogout
 
 
   $locationProvider.hashPrefix("")
@@ -50,8 +50,8 @@ capstone.config(($routeProvider,$locationProvider )=>{
               },
               user:(AuthFactory)=>{
                 return AuthFactory.getUid()
-              }
-            }, showHideLogout
+              }},showHideLogout
+
   })
   // .when("/register",{
   //   controller: "RegisterCtrl",
@@ -70,7 +70,7 @@ capstone.config(($routeProvider,$locationProvider )=>{
   .when("/logout",{
     controller: "LogoutCtrl",
     templateUrl: "/partials/logout.html",
-    resolve: showHideLogout
+    resolve:showHideLogout
   })
   .when("/profile",{
     controller: "ProfileCtrl",
@@ -79,7 +79,7 @@ capstone.config(($routeProvider,$locationProvider )=>{
       return AuthFactory.getUser().catch(()=>{
         $location.url("/login")
       })
-    }}, showHideLogout
+    }},showHideLogout
      // resolve: checkForAuth
   })
 //   .run(function(editableOptions) {

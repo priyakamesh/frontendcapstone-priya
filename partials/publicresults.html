@@ -46,7 +46,7 @@
           <div class="card ">
 
             <div class="card-content red lighten-3" ng-repeat = "(key1,value) in currentValue.practices">
-            <div class = "borderBlock"><i class="material-icons">location_on</i><a target="_blank" href="https://www.google.com/maps/?q={{value.lat}},{{value.lon}}"
+            <div class = "borderBlock"><i class="material-icons">location_on</i><a target="_blank" href="https://www.google.com/maps/place/{{value.visit_address.street}},{{value.visit_address.city}},{{value.visit_address.zip}}"
                   >{{value.visit_address.street}}, {{value.visit_address.street2}},{{value.visit_address.city}}
             {{value.visit_address.zip}}</a></div>
             <div><i class="material-icons">phone</i>
@@ -66,6 +66,7 @@
   </div>
 </div>
 
-<div class="alert">
+<!-- <div class="alert">
       <div class="closebtn" ng-click="this.parentElement.style.display='none';"><p>INFO: Sorry no doctors found in the area</p><i class="material-icons right">close</i></div>
     </div>
+ -->
