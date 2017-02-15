@@ -1,4 +1,4 @@
-const capstone = angular.module("capstoneApp",["ngRoute",'growlNotifications','ngMap'])
+const capstone = angular.module("capstoneApp",["ngRoute",'growlNotifications'])
 capstone.config(($routeProvider,$locationProvider )=>{
   firebase.initializeApp({
     apiKey: "AIzaSyBiwwJ_-OG8_NDU9rwESzwSf9HNVUcA_I8",
@@ -7,26 +7,6 @@ capstone.config(($routeProvider,$locationProvider )=>{
     storageBucket: "frontendcapstone.appspot.com",
     messagingSenderId: "303345732104"
   });
-  // const showHideButton ={
-  //    function() {
-  //      const authReady = firebase.auth().onAuthStateChanged(user => {
-  //        authReady()
-  //          if (!user) {
-  //            $('.logoutButton').addClass('ng-hide')
-  //            $('.profileButton').addClass('ng-hide')
-  //            $('.logInButton').removeClass("ng-hide")
-  //            $('.registerButton').removeClass("ng-hide")
-  //          } else if (user) {
-  //            $('.logoutButton').removeClass("ng-hide")
-  //            $('.profileButton').removeClass("ng-hide")
-  //            $('.logInButton').addClass("ng-hide")
-  //            $('.registerButton').addClass("ng-hide")
-  //          }
-
-  //     }) //authReady
-
-  //   }
-  //  }//showHideLogout
 
 
   $locationProvider.hashPrefix("")
@@ -104,7 +84,15 @@ capstone.config(($routeProvider,$locationProvider )=>{
     // ,showHideButton
      // resolve: checkForAuth
   })
-//   .run(function(editableOptions) {
-//   editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
-// })
+ .when("/map", {
+  controller: "PublicresultsCtrl",
+  templateUrl: "/partials/map.html",
+  // resolve: {
+  //             doctors:(doctorFactory)=>{
+  //               return doctorFactory.getDoctor()
+  //             },
+  //             user1:(AuthFactory)=>{
+  //               return AuthFactory.getUser().catch(console.log)
+  //   }}
+ })
 })

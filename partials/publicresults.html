@@ -1,5 +1,5 @@
 <h1>List of Doctors</h1>
-
+<div id="map"></div>
 <div class="row">
         <div class="col s12 m9"   ng-repeat = "(key,value) in doctorList">
           <div class="card  red lighten-3 left">
@@ -21,6 +21,7 @@
       </div>
 
 </div>
+
 <div class="footer1">
       Powered by <a class="brown-text text-lighten-1" target="_blank" href="https://developer.betterdoctor.com">Better Doctor</a>
       <!-- </div> -->
@@ -49,6 +50,7 @@
             <div class = "borderBlock"><i class="material-icons">location_on</i><a target="_blank" href="https://www.google.com/maps/place/{{value.visit_address.street}},{{value.visit_address.city}},{{value.visit_address.zip}}"
                   >{{value.visit_address.street}}, {{value.visit_address.street2}},{{value.visit_address.city}}
             {{value.visit_address.zip}}</a></div>
+            <button ng-click="getMap(value)">Get Doctor work location</button>
             <div><i class="material-icons">phone</i>
             <div ng-repeat = "(key2,value) in currentValue.practices[key1].phones">{{value.type}} : {{value.number}}</div></div>
             <a target="_blank" href="{{value.website}}">
@@ -70,3 +72,9 @@
       <div class="closebtn" ng-click="this.parentElement.style.display='none';"><p>INFO: Sorry no doctors found in the area</p><i class="material-icons right">close</i></div>
     </div>
  -->
+<!-- <div id="modal5" class="modal">
+  <div class='modal-content'>
+    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+ </div>
+</div> -->
