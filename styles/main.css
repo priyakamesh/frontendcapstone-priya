@@ -1,5 +1,8 @@
-nav {
 
+.nav {
+  background-color: #0d47a1;
+}
+nav {
   padding-left: 4em;
   padding-right: 4em
 }
@@ -32,10 +35,6 @@ input:required:focus {
     box-sizing: border-box;
 }
 
-.logo {
-  height: 60px;
-  width: 60px;
-}
 .heading {
   font-weight: bold
 }
@@ -74,4 +73,9 @@ input:required:focus {
   margin-top: 10px;
   font-size: 20px;
   text-shadow: 0 0 3px #FF0000;
+}
+
+.person {
+  width:30px;
+  height:30px;
 }

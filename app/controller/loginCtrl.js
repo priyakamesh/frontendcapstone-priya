@@ -13,10 +13,10 @@ capstone.controller("LoginCtrl", function($scope,$location,AuthFactory){
           $location.url("/publicresults")
           // $scope.$apply()
 
-       $('.logoutButton').removeClass('ng-hide')
-       $('.profileButton').removeClass('ng-hide')
-       $('.logInButton').addClass("ng-hide")
-       $('.registerButton').addClass("ng-hide")
+       // $('.logoutButton').removeClass('ng-hide')
+       // $('.profileButton').removeClass('ng-hide')
+       // $('.logInButton').addClass("ng-hide")
+       // $('.registerButton').addClass("ng-hide")
       }
       else {
         alert(data.message)

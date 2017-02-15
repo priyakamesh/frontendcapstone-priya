@@ -24,6 +24,7 @@ capstone.factory("doctorFactory", function($http){
                   limit: 10 // The max amount of results that can be shown at once. Default: Infinity.
                   });
               })
+
           },
           getuserSpeciality :(user_speciality)=>{
             return userSpeciality = user_speciality
