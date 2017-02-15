@@ -1,11 +1,11 @@
- <div class="row">
-   <div class="card col s12 m5">
+ <div class="row right-align">
+   <div class="card col s12 m4 ">
     <div class="card-content">
     <img src="{{user.imageUrl}}">
       <h4 class="card-title uppercase">{{user.Firstname}} {{user.Lastname}}</h4>
-       <p>{{userDob}}</p>
-      <div>Email:{{ user.email }}</div>
-      <div  class="borderBlock">Address :<div>{{user.Address.Address1}}
+       <p>DOB:  {{userDob}}</p>
+      <div>EMAIL:  {{ user.email }}</div>
+      <div>ADDRESS:  {{user.Address.Address1}}
       {{user.Address.Address2}}
      {{user.Address.City}}
       {{user.Address.state}}

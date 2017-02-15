@@ -7,26 +7,26 @@ capstone.config(($routeProvider,$locationProvider )=>{
     storageBucket: "frontendcapstone.appspot.com",
     messagingSenderId: "303345732104"
   });
-  const showHideLogout ={
-     function() {
-       const authReady = firebase.auth().onAuthStateChanged(user => {
-         authReady()
-           if (!user) {
-             $('.logoutButton').addClass('ng-hide')
-             $('.profileButton').addClass('ng-hide')
-             $('.logInButton').removeClass("ng-hide")
-             $('.registerButton').removeClass("ng-hide")
-           } else if (user) {
-             $('.logoutButton').removeClass("ng-hide")
-             $('.profileButton').removeClass("ng-hide")
-             $('.logInButton').addClass("ng-hide")
-             $('.registerButton').addClass("ng-hide")
-           }
+  // const showHideButton ={
+  //    function() {
+  //      const authReady = firebase.auth().onAuthStateChanged(user => {
+  //        authReady()
+  //          if (!user) {
+  //            $('.logoutButton').addClass('ng-hide')
+  //            $('.profileButton').addClass('ng-hide')
+  //            $('.logInButton').removeClass("ng-hide")
+  //            $('.registerButton').removeClass("ng-hide")
+  //          } else if (user) {
+  //            $('.logoutButton').removeClass("ng-hide")
+  //            $('.profileButton').removeClass("ng-hide")
+  //            $('.logInButton').addClass("ng-hide")
+  //            $('.registerButton').addClass("ng-hide")
+  //          }
 
-      }) //authReady
+  //     }) //authReady
 
-    }
-   }//showHideLogout
+  //   }
+  //  }//showHideLogout
 
 
   $locationProvider.hashPrefix("")
@@ -34,12 +34,16 @@ capstone.config(($routeProvider,$locationProvider )=>{
   .when("/",{
     controller: "PublicCtrl",
     templateUrl: "/partials/public.html",
-    resolve: showHideLogout
+    resolve: {user1:(AuthFactory)=>{
+      return AuthFactory.getUser().catch(console.log)
+    }}
   })
   .when ("/register",{
     controller: "RegisterCtrl",
     templateUrl: "/partials/Register.html",
-    resolve: showHideLogout
+    resolve: {user1:(AuthFactory)=>{
+      return AuthFactory.getUser().catch(console.log)
+    }}// resolve: showHideButton
   })
   .when("/publicresults",{
     controller: "PublicresultsCtrl",
@@ -50,7 +54,11 @@ capstone.config(($routeProvider,$locationProvider )=>{
               },
               user:(AuthFactory)=>{
                 return AuthFactory.getUid()
-              }},showHideLogout
+              },
+              user1:(AuthFactory)=>{
+                return AuthFactory.getUser().catch(console.log)
+    }}
+              // ,showHideButton
 
   })
   // .when("/register",{
@@ -60,26 +68,40 @@ capstone.config(($routeProvider,$locationProvider )=>{
   .when("/login",{
     controller: "LoginCtrl",
     templateUrl: "/partials/login.html",
-    resolve: showHideLogout
+    resolve: {user1:(AuthFactory)=>{
+      return AuthFactory.getUser().catch(console.log)
+    }}
+    // resolve: showHideButton
   })
   .when("/favorite", {
     controller: "FavoriteCtrl",
     templateUrl: "/partials/Favorite.html",
-    resolve: showHideLogout
+    resolve: {user1:(AuthFactory)=>{
+      return AuthFactory.getUser().catch(console.log)
+    }}
+    // resolve: showHideButton
   })
   .when("/logout",{
     controller: "LogoutCtrl",
     templateUrl: "/partials/logout.html",
-    resolve:showHideLogout
+    resolve: {user1:(AuthFactory)=>{
+      return AuthFactory.getUser().catch(console.log)
+    }}
+    // resolve:showHideButton
   })
   .when("/profile",{
     controller: "ProfileCtrl",
     templateUrl: "partials/profile.html",
     resolve: {user:(AuthFactory,$location)=>{
-      return AuthFactory.getUser().catch(()=>{
-        $location.url("/login")
-      })
-    }},showHideLogout
+                return AuthFactory.getUser().catch(()=>{
+                  $location.url("/login")
+                })
+              },
+              user1:(AuthFactory)=>{
+                  return AuthFactory.getUser().catch(console.log)
+              }
+            }
+    // ,showHideButton
      // resolve: checkForAuth
   })
 //   .run(function(editableOptions) {

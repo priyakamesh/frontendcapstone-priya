@@ -34,10 +34,18 @@ capstone.factory ("AuthFactory", function ($q,$location,) {
           console.log(user)
           if (user) {
             resolve(user);
+            $('.logoutButton').removeClass("ng-hide")
+             $('.profileButton').removeClass("ng-hide")
+             $('.logInButton').addClass("ng-hide")
+             $('.registerButton').addClass("ng-hide")
             // $scope.$apply()
             console.log("im resolved")
           } else {
             reject("Not logged in");
+            $('.logoutButton').addClass('ng-hide')
+             $('.profileButton').addClass('ng-hide')
+             $('.logInButton').removeClass("ng-hide")
+             $('.registerButton').removeClass("ng-hide")
             console.log("im rejected")
           }
         }); //end const unsubscribe

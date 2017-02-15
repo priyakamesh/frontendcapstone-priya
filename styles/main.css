@@ -19,10 +19,10 @@ input:required:focus {
   background-color: white;
   outline: none;
 }
-.borderBlock {
+/*.borderBlock {
   border: 1px solid lightblue;
-  background-color: #ffcdd2;
-}
+
+}*/
 .upperCase {
   text-transform: uppercase;
 }
