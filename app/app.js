@@ -1,4 +1,4 @@
-const capstone = angular.module("capstoneApp",["ngRoute","xeditable"])
+const capstone = angular.module("capstoneApp",["ngRoute",'growlNotifications'])
 capstone.config(($routeProvider,$locationProvider )=>{
   firebase.initializeApp({
     apiKey: "AIzaSyBiwwJ_-OG8_NDU9rwESzwSf9HNVUcA_I8",
@@ -51,7 +51,7 @@ capstone.config(($routeProvider,$locationProvider )=>{
               user:(AuthFactory)=>{
                 return AuthFactory.getUid()
               }
-            },showHideLogout
+            }, showHideLogout
   })
   // .when("/register",{
   //   controller: "RegisterCtrl",
@@ -62,14 +62,10 @@ capstone.config(($routeProvider,$locationProvider )=>{
     templateUrl: "/partials/login.html",
     resolve: showHideLogout
   })
-  .when("/privateview/:dockey",{
-    controller: "PrivateviewCtrl",
-    templateUrl: "/partials/privateview.html",
-    resolve: {user:(AuthFactory,$location)=>{
-      return AuthFactory.getUser().catch(()=>{
-        $location.url("/login")
-      })
-    }}
+  .when("/favorite", {
+    controller: "FavoriteCtrl",
+    templateUrl: "/partials/Favorite.html",
+    resolve: showHideLogout
   })
   .when("/logout",{
     controller: "LogoutCtrl",

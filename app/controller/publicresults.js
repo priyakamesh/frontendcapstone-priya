@@ -1,10 +1,6 @@
 capstone.controller("PublicresultsCtrl", function ($scope,doctors,$location,$http,user){
   $scope.doctorList = doctors
   console.log(doctors)
-  if($scope.doctorList.length === 0){
-    alert("Sorry no doctors found in the area")
-    $location.path("/")
-  }
   console.log($scope.doctorList)
 
   var doctorSpecialities = {}

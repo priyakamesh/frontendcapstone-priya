@@ -117,6 +117,10 @@ $scope.date = new Date();
   })
   $("#modal3").modal("close")
  }
-
+$scope.cancel = ()=>{
+  $location.url("/profile")
+  $("#modal3").modal("close")
+  // $scope.$apply()
+}
 
 })

@@ -7,14 +7,23 @@ capstone.controller("LoginCtrl", function($scope,$location,AuthFactory){
 
     AuthFactory.setter($scope.user_email,$scope.user_password)
     .then((data)=>{
+      console.log(data)
+      if(!data.message){
+          Materialize.toast("logged in", 1000)
+          $location.url("/publicresults")
+          // $scope.$apply()
 
-      Materialize.toast("logged in", 1000)
-      $location.url(`/publicresults`)
-      $scope.$apply()
-       $('.logoutButton').removeClass('ng-hide')
-       $('.profileButton').removeClass('ng-hide')
-       $('.logInButton').addClass("ng-hide")
-       $('.registerButton').addClass("ng-hide")
+       // $('.logoutButton').removeClass('ng-hide')
+       // $('.profileButton').removeClass('ng-hide')
+       // $('.logInButton').addClass("ng-hide")
+       // $('.registerButton').addClass("ng-hide")
+      }
+      else {
+        alert(data.message)
+        $location.url("/login")
+      }
+
+
     })
   }
   $scope.forgotPassword = ()=>{

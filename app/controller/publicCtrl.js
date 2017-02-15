@@ -1,9 +1,11 @@
 capstone.controller ("PublicCtrl", function ($http,$scope,doctorFactory,$location,AuthFactory) {
 
-
+$(".alert").addClass("ng-hide")
  $('.parallax').parallax();
  $scope.speciality = doctorFactory.getSpeciality();
   $scope.insurance = doctorFactory.getInsurance();
+  // $scope.insuranceNames = Object.keys($scope.insurance)
+  // console.log($scope.insurance)
   $scope.getDoctor = ()=>{
     $scope.user_speciality = doctorFactory.getuserSpeciality($scope.speciality)
 
@@ -13,7 +15,17 @@ capstone.controller ("PublicCtrl", function ($http,$scope,doctorFactory,$locatio
     $scope.zipcode = doctorFactory.getZipcode($scope.zipcode)
     console.log($scope.zipcode)
     doctorFactory.getDoctorlist()
-    .then((data)=>{$location.path("/publicresults")})
+    .then((data)=>{
+      console.log(data)
+
+      if(data.length === 0) {
+        console.log(data.length )
+        $(".alert").removeClass("ng-hide")
+      }
+      else{
+      $location.path("/publicresults")
+    }
+    })
 
       $scope.uid =  AuthFactory.getUid().uid
       if (uid !== "") {
@@ -25,9 +37,12 @@ capstone.controller ("PublicCtrl", function ($http,$scope,doctorFactory,$locatio
       }
   }
   $('.button-collapse').sideNav({
-     menuWidth: 300, // Default is 300
-      edge: 'right', // Choose the horizontal origin
+     menuWidth: 100, // Default is 300
+      edge: 'left', // Choose the horizontal origin
       closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
       draggable: true // Choose whether you can drag to open on touch screens
     });
+  $scope.close = ()=>{
+    $(".alert").remove()
+  }
 })
