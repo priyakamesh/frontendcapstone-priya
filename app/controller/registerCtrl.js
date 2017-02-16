@@ -1,4 +1,4 @@
-capstone.controller("RegisterCtrl", function($scope,$http,AuthFactory,$location,user){
+capstone.controller("RegisterCtrl", function($scope,$http,AuthFactory,$location,user1){
 // $(".button-collapse").sideNav();
 $http.get(`states.json`)
 .then((data)=>{

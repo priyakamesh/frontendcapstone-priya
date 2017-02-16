@@ -1,5 +1,5 @@
 capstone.controller("PublicresultsCtrl", function ($scope,doctors,$location,$http,user){
-  $("#map").addClass("ng-hide")
+  $("#map1").addClass("ng-hide")
   $scope.doctorList = doctors
   console.log(doctors)
   console.log($scope.doctorList)
@@ -118,9 +118,11 @@ $scope.moreLogin = ()=>{
  //      }
       // initMap()
       $scope.getMap = (value)=>{
-        $("#map").removeClass("ng-hide")
+        $("#map1").removeClass("ng-hide")
         $("#modal2").modal('close')
         console.log(value)
+        $scope.lat = value.lat
+        $scope.lon = value.lon
         console.log(value.lat)
         console.log(value.lon)
         function initMap() {
@@ -135,5 +137,11 @@ $scope.moreLogin = ()=>{
         });
       }
       initMap()
+      }
+      $scope.getDirection = () =>{
+        console.log($scope.origin)
+        console.log($scope.lat,$scope.lon)
+        $http.get(`https://maps.googleapis.com/maps/api/directions/json?origin=${$scope.origin}&destination=${$scope.lat} ${$scope.lon}&key=AIzaSyCeTKmlrBla2hBZhm_LTAMT3El0LQTMkps`)
+        .then(console.log)
       }
 })
