@@ -1,5 +1,6 @@
 capstone.controller ("PublicCtrl", function ($http,$scope,doctorFactory,$location,AuthFactory) {
 //HIDING THE ALERT DIV IF NO DOCTORS FOUND
+$('html,body').animate({scrollTop: 0},'fast');
   $(".alert").addClass("ng-hide")
 
   $('.parallax').parallax();

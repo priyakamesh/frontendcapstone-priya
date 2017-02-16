@@ -60,7 +60,9 @@ $scope.date = new Date();
                               state: $scope.user_state,
                               zipcode: $scope.user_zipcode}
     })
+         Materialize.toast("registered successfully", 1000)
         $location.path(`/`)
+
 })
 
 }
