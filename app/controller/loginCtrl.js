@@ -23,12 +23,17 @@ capstone.controller("LoginCtrl", function($scope,$location,AuthFactory){
   }
   //FORGOT PASSWORD FUNCTION
   $scope.forgotPassword = ()=>{
-    firebase.auth().sendPasswordResetEmail($scope.user_email)
+    if($scope.user_email){
+      firebase.auth().sendPasswordResetEmail($scope.user_email)
       .then(function() {
          alert("Email sent.... check your inbox")
         })
         .catch( function(error) {
           alert("Email not found")
         });
-  }
+    } else {
+      Materialize.toast("Please enter the email address",2000)
+      $("#email").focus()
+    }
+}
 })
