@@ -1,8 +1,12 @@
-<h1>List of Doctors</h1>
-
-<div class="row">
-        <div class="col s12 m9"   ng-repeat = "(key,value) in doctorList">
-          <div class="card  red lighten-3 left">
+<h6 class="padding">WE FOUND {{doctorList.length}} NUMBERS OF DOCTORS BASED ON YOUR SEARCH CRITERIA</h6>
+<div id="map1" class="col s12 m6">
+<input type="text" placeholder="ORIGIN" ng-model="origin" >
+<button ng-click = "getDirection()">Get Direction</button>
+  <div id="map"></div>
+</div>
+<div class="row paddingDiv">
+        <div class="col s12 m9 "   ng-repeat = "(key,value) in doctorList">
+          <div class="card  blue darken-2 left">
             <div class="card-content">
               <h5 class="card-title heading">{{value.profile.title}} {{value.profile.first_name}} {{value.profile.last_name}}</h5>
               <h6 class="heading">Speciality :</h6>
@@ -11,8 +15,8 @@
               <!-- <div ng-repeat = "(key,value) in doctorSpecialities">{{key}}</div> -->
               <h6 class="heading">BIO:</h6><p> {{value.profile.bio}}</p>
               <!-- <div class="card-action"> -->
-              <button ng-click = "moreLogin()" ng-if = "!uid" class="waves-effect waves-light btn" data-target="modal1"><i class="material-icons left">more_vert</i>More info</button>
-              <button ng-click = "moreInfo(value,key)" ng-if = "uid" class="waves-effect waves-light btn" data-target="modal2"><i class="material-icons left">more_vert</i>MoreInfo</button>
+              <button ng-click = "moreLogin()" ng-if = "!uid" class="waves-effect waves-light blue darken-4 right" data-target="modal1">More info</button>
+              <button ng-click = "moreInfo(value,key)" ng-if = "uid" class="waves-effect waves-light blue darken-4 right" data-target="modal2">MoreInfo</button>
               </div>
               <!-- <a ng-href="#/privateview/{{key}}" class="activator"><i class="material-icons left">more_vert</i>More info</a> -->
             <!-- </div> -->
@@ -21,16 +25,17 @@
       </div>
 
 </div>
-<div class="footer1">
+
+<div class="footer1 blue darken-2">
       Powered by <a class="brown-text text-lighten-1" target="_blank" href="https://developer.betterdoctor.com">Better Doctor</a>
       <!-- </div> -->
     </div>
 
  <div id="modal1" class="modal">
   <div class="modal-content">
+       <p ng-click = "cancel()"><i class="material-icons right">close</i></p>
+      <h5>Please <a ng-click = "loginLink()">Login</a>/<a ng-click = "registerLink()">Register</a> to view more details</h5>
 
-      <h4>Please <a ng-click = "loginLink()">Login</a>/<a ng-click = "registerLink()">Register</a> to view more details</h4>
-      <p ng-click = "cancel()"><i class="material-icons right">close</i></p>
 
    <!-- </div> -->
 
@@ -45,27 +50,30 @@
 
           <div class="card ">
 
-            <div class="card-content red lighten-3" ng-repeat = "(key1,value) in currentValue.practices">
-            <div class = "borderBlock"><i class="material-icons">location_on</i><a target="_blank" href="https://www.google.com/maps/?q={{value.lat}},{{value.lon}}"
+            <div class="card-content blue darken-2 border" ng-repeat = "(key1,value) in currentValue.practices">
+            <p class="upperCase">office address:</p>
+            <div class = "blue darken-4"><i class="material-icons">location_on</i><a class="text" target="_blank" href="https://www.google.com/maps/place/{{value.visit_address.street}},{{value.visit_address.city}},{{value.visit_address.zip}}"
                   >{{value.visit_address.street}}, {{value.visit_address.street2}},{{value.visit_address.city}}
-            {{value.visit_address.zip}}</a></div>
-            <div><i class="material-icons">phone</i>
-            <div ng-repeat = "(key2,value) in currentValue.practices[key1].phones">{{value.type}} : {{value.number}}</div></div>
+            {{value.visit_address.zip}} (For Directions click here)</a></div>
+            <button ng-click="getMap(value)" class="text blue darken-4 right">Get Doctor work location</button>
+            <div class="paddingDiv1">
+            <p class="upperCase">contact info:</p>
+            <div ng-repeat = "(key2,value) in currentValue.practices[key1].phones" class="text ">{{value.type}} : {{value.number}}</div></div>
             <a target="_blank" href="{{value.website}}">
             {{value.website}}</a>
-            <p class="upperCase">Accepts New Patient: {{value.accepts_new_patients}}</p>
-            <div class="card-title">Insurance Accepted</div>
-            <p ng-repeat = "each in currentValue.insurances">{{each.insurance_plan.name}}</p>
+            <div class="upperCase paddingDiv1">Accepts New Patient:
+            <p class="white" ng-if= "value.accepts_new_patients === true"> YES</p>
+            <p class="white" ng-if= "value.accepts_new_patients === false"> NO</p>
+            <p class="white" ng-if= "!value.accepts_new_patients"> NO INFO FOUND</p>
+            </div>
+            <div><p class="upperCase card-title">Insurance Accepted:</p>
+            <p ng-repeat = "each in currentValue.insurances" class="text">{{each.insurance_plan.name}}</p>
+            </div>
             <div class="card-action">
-              <button class="btn" ng-click = "saveDoc()">Save to your profile</button>
+              <button class="blue darken-4 text right" ng-click = "saveDoc()">Save to your profile</button>
             </div>
           </div>
-
         </div>
       </div>
   </div>
 </div>
-
-<div class="alert">
-      <div class="closebtn" ng-click="this.parentElement.style.display='none';"><p>INFO: Sorry no doctors found in the area</p><i class="material-icons right">close</i></div>
-    </div>

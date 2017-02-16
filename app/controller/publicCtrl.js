@@ -24,10 +24,12 @@ $(".alert").addClass("ng-hide")
       }
       else{
       $location.path("/publicresults")
+      // $scope.$apply()
     }
     })
 
       $scope.uid =  AuthFactory.getUid().uid
+      console.log("uid: ",$scope.uid)
       if (uid !== "") {
         $('.logoutButton').removeClass('ng-hide')
          $('.profileButton').removeClass('ng-hide')

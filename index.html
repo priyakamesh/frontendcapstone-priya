@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
   <!-- <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap.min.css"> -->
   <link rel="stylesheet" type="text/css" href="/lib/materialize/dist/css/materialize.min.css">
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -29,7 +30,7 @@
 
   </div>
         <ul id='dropdown1' class='dropdown-content'>
-          <li><a href="#/profile">My Profile</a></li>
+          <li><a href="#/profile" class="color">My Profile</a></li>
           <li class="divider"></li>
           <li><a href="#/logout">Logout</a></li>
           <li class="divider"></li>
@@ -67,7 +68,12 @@
   <!-- <script src="/lib/bootstrap/js/alert.js"></script> -->
   <script src="/lib/firebase/firebase.js"></script>
   <script src="/lib/materialize/dist/js/materialize.js"></script>
+  <!-- <script src="/lib/ngmap/build/scripts/ng-map.min.js"></script> -->
+
+
+
   <script src="/app/app.js"></script>
+
   <script src="/app/factories/AuthFactory.js"></script>
   <script src="/app/factories/doctorFactory.js"></script>
   <script src="/app/controller/publicCtrl.js"></script>
@@ -77,5 +83,9 @@
   <script src="/app/controller/favoritectrl.js"></script>
   <script src="/app/controller/logoutCtrl.js"></script>
   <script src="/app/controller/profileCtrl.js"></script>
+  <script src="/app/controller/mapCtrl.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVPl38HNbTUQmIw6-4mMyoXG6lo4OdHfI&libraries=place">
+    </script>
 </body>
 </html>

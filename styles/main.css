@@ -1,4 +1,20 @@
-
+body {
+  background-color: #efefef;
+}
+.padding {
+  margin-left: 100px;
+  margin-top: 2rem;
+  font-weight: bold;
+}
+.paddingDiv{
+  margin-left: 100px;
+}
+.modal {
+  border: 2px solid grey;
+}
+#dropdown1 {
+  min-width: 200px;
+}
 .nav {
   background-color: #0d47a1;
 }
@@ -19,10 +35,10 @@ input:required:focus {
   background-color: white;
   outline: none;
 }
-.borderBlock {
+/*.borderBlock {
   border: 1px solid lightblue;
-  background-color: #ffcdd2;
-}
+
+}*/
 .upperCase {
   text-transform: uppercase;
 }
@@ -40,12 +56,19 @@ input:required:focus {
 }
 .right {
   float: right;
-}
+ }
+ .paddingDiv1 {
+  padding-top: 1em;
+  padding-bottom: 1.5em;
+ }
 .left {
   float: left;
+  color: white;
 }
-.uppercase {
+
+.upperCase {
   text-transform: uppercase;
+ /* color: white;*/
 }
 .footer {
   position: relative;
@@ -72,10 +95,24 @@ input:required:focus {
   padding-top: 10px;
   margin-top: 10px;
   font-size: 20px;
-  text-shadow: 0 0 3px #FF0000;
+  /*text-shadow: 0 0 3px #FF0000;*/
 }
 
 .person {
   width:30px;
   height:30px;
+}
+#map {
+        width: 50%;
+        height: 300px;
+        background-color: grey;
+      }
+.text {
+  color: white;
+}
+.border {
+  border: 2px solid grey;
+}
+.text1 {
+  color: grey;
 }

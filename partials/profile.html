@@ -1,11 +1,13 @@
- <div class="row">
-   <div class="card col s12 m5">
+ <div>
+ <div>
+ <div class="row right-align">
+   <div class="card col s12 m4 ">
     <div class="card-content">
     <img src="{{user.imageUrl}}">
       <h4 class="card-title uppercase">{{user.Firstname}} {{user.Lastname}}</h4>
-       <p>{{userDob}}</p>
-      <div>Email:{{ user.email }}</div>
-      <div  class="borderBlock">Address :<div>{{user.Address.Address1}}
+       <p>DOB:  {{userDob}}</p>
+      <div>EMAIL:  {{ user.email }}</div>
+      <div>ADDRESS:  {{user.Address.Address1}}
       {{user.Address.Address2}}
      {{user.Address.City}}
       {{user.Address.state}}
@@ -56,23 +58,24 @@
 
 <ul class="collapsible" data-collapsible="accordion">
   <li>
-    <div class="collapsible-header">My Doctors</div>
+    <div class="collapsible-header">MY DOCTOR LIST</div>
     <div class="collapsible-body">
       <div class="row">
-            <div class="col s12 m6"   ng-repeat = "(key1,each1) in doctorList" id = "{{key1}}">
+            <div class="col s12 m6 border"   ng-repeat = "(key1,each1) in doctorList" id = "{{key1}}">
 
-              <div class="card  red lighten-4">
+              <div class="card blue darken-2 text">
                 <div class="card-content">
                 <span class="card-title">{{each1.Title}} {{each1.first_name}} {{each1.last_name}}</span>
                 <span ng-repeat="(key, each) in each1.Speciality">
                 <p>{{each.name}}</p>
                 </span>
-                <div ng-repeat = "(key,each) in each1.office_address">  <h6>City: {{each.visit_address.city}}</h6>
-                                                                      Address: <div>{{each.visit_address.street}}
-                                                                      {{each.visit_address.street2}}</div>
-                                                                      <p>zip: {{each.visit_address.zip}}</p></div>
+                <div ng-repeat = "(key,each) in each1.office_address">  <h6 >City: {{each.visit_address.city}}</h6>
+                <a class="text" target="_blank" href="https://www.google.com/maps/place/{{each.visit_address.street}},{{each.visit_address.city}},{{each.visit_address.zip}}"
+                  >
+                   Address: {{each.visit_address.street}} {{each.visit_address.street2}},
+                    zip: {{each.visit_address.zip}}(For Directions click here)</a>
                 </div>
-                <button class="btn" ng-click = "delete(key1)">Delete</button>
+                <button class="blue darken-4 right" ng-click = "delete(key1)">Remove from list</button>
                 </div>
 
               </div>
@@ -80,7 +83,8 @@
     </div>
   </li>
 </ul>
-<div class="footer1">
+</div>
+<div class="footer1 blue darken-2">
       Powered by <a class="brown-text text-lighten-1" target="_blank" href="https://developer.betterdoctor.com">Better Doctor</a>
       <!-- </div> -->
     </div>
