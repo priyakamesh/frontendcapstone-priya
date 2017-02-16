@@ -1,6 +1,17 @@
 body {
   background-color: #efefef;
 }
+.padding {
+  margin-left: 150px;
+  margin-top: 2rem;
+  font-weight: bold;
+}
+.paddingDiv{
+  margin-left: 100px;
+}
+.modal {
+  border: 2px solid grey;
+}
 #dropdown1 {
   min-width: 200px;
 }
@@ -48,9 +59,12 @@ input:required:focus {
 }
 .left {
   float: left;
+  color: white;
 }
-.uppercase {
+
+.upperCase {
   text-transform: uppercase;
+  color: white;
 }
 .footer {
   position: relative;
@@ -89,3 +103,6 @@ input:required:focus {
         height: 300px;
         background-color: grey;
       }
+.text {
+  color: white;
+}
