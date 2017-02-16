@@ -1,7 +1,7 @@
 <h6 class="padding">WE FOUND {{doctorList.length}} NUMBERS OF DOCTORS BASED ON YOUR SEARCH CRITERIA</h6>
 <div id="map1" class="col s12 m6">
-<input type="text" placeholder="ORIGIN" ng-model="origin" >
-<button ng-click = "getDirection()">Get Direction</button>
+<!-- <input type="text" placeholder="ORIGIN" ng-model="origin" id="start"> -->
+<!-- <button ng-click = "getDirection()">Get Direction</button> -->
   <div id="map"></div>
 </div>
 <div class="row paddingDiv">
@@ -17,12 +17,19 @@
               <!-- <div class="card-action"> -->
               <button ng-click = "moreLogin()" ng-if = "!uid" class="waves-effect waves-light blue darken-4 right" data-target="modal1">More info</button>
               <button ng-click = "moreInfo(value,key)" ng-if = "uid" class="waves-effect waves-light blue darken-4 right" data-target="modal2">MoreInfo</button>
+
               </div>
               <!-- <a ng-href="#/privateview/{{key}}" class="activator"><i class="material-icons left">more_vert</i>More info</a> -->
             <!-- </div> -->
           </div>
+           <!-- <div id="{{key}}" class="col s12 m6 ng-hide">
+                <input type="text" placeholder="ORIGIN" ng-model="origin" >
+                <button ng-click = "getDirection()">Get Direction</button>
+                  <div id="map{{key}}"></div>
+                </div> -->
           <!-- <div class="right"><img src="{{value.profile.image_url}}" class="hide-on-small-only "></div> -->
       </div>
+
 
 </div>
 
@@ -55,7 +62,7 @@
             <div class = "blue darken-4"><i class="material-icons">location_on</i><a class="text" target="_blank" href="https://www.google.com/maps/place/{{value.visit_address.street}},{{value.visit_address.city}},{{value.visit_address.zip}}"
                   >{{value.visit_address.street}}, {{value.visit_address.street2}},{{value.visit_address.city}}
             {{value.visit_address.zip}} (For Directions click here)</a></div>
-            <button ng-click="getMap(value)" class="text blue darken-4 right">Get Doctor work location</button>
+            <button ng-click="getMap(value,key1)" class="text blue darken-4 right">Get Doctor work location</button>
             <div class="paddingDiv1">
             <p class="upperCase">contact info:</p>
             <div ng-repeat = "(key2,value) in currentValue.practices[key1].phones" class="text ">{{value.type}} : {{value.number}}</div></div>
@@ -66,8 +73,8 @@
             <p class="white" ng-if= "value.accepts_new_patients === false"> NO</p>
             <p class="white" ng-if= "!value.accepts_new_patients"> NO INFO FOUND</p>
             </div>
-            <div><p class="upperCase card-title">Insurance Accepted:</p>
-            <p ng-repeat = "each in currentValue.insurances" class="text">{{each.insurance_plan.name}}</p>
+            <div><p class="upperCase">Insurance Accepted:</p>
+            <p ng-repeat = "each in currentValue.insurances" class="white-text">{{each.insurance_plan.name}}</p>
             </div>
             <div class="card-action">
               <button class="blue darken-4 text right" ng-click = "saveDoc()">Save to your profile</button>
