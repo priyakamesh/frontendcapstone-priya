@@ -1,7 +1,7 @@
 <h6 class="padding">WE FOUND {{doctorList.length}} NUMBERS OF DOCTORS BASED ON YOUR SEARCH CRITERIA</h6>
 <div id="map1" class="col s12 m6">
-<input type="text" placeholder="ORIGIN" ng-model="origin" >
-<button ng-click = "getDirection()">Get Direction</button>
+<!-- <input type="text" placeholder="ORIGIN" ng-model="origin" id="start"> -->
+<!-- <button ng-click = "getDirection()">Get Direction</button> -->
   <div id="map"></div>
 </div>
 <div class="row paddingDiv">
@@ -73,8 +73,8 @@
             <p class="white" ng-if= "value.accepts_new_patients === false"> NO</p>
             <p class="white" ng-if= "!value.accepts_new_patients"> NO INFO FOUND</p>
             </div>
-            <div><p class="upperCase card-title">Insurance Accepted:</p>
-            <p ng-repeat = "each in currentValue.insurances" class="text">{{each.insurance_plan.name}}</p>
+            <div><p class="upperCase">Insurance Accepted:</p>
+            <p ng-repeat = "each in currentValue.insurances" class="white-text">{{each.insurance_plan.name}}</p>
             </div>
             <div class="card-action">
               <button class="blue darken-4 text right" ng-click = "saveDoc()">Save to your profile</button>
