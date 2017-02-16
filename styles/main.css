@@ -2,7 +2,7 @@ body {
   background-color: #efefef;
 }
 .padding {
-  margin-left: 150px;
+  margin-left: 100px;
   margin-top: 2rem;
   font-weight: bold;
 }
@@ -56,7 +56,11 @@ input:required:focus {
 }
 .right {
   float: right;
-}
+ }
+ .paddingDiv1 {
+  padding-top: 1em;
+  padding-bottom: 1.5em;
+ }
 .left {
   float: left;
   color: white;
@@ -64,7 +68,7 @@ input:required:focus {
 
 .upperCase {
   text-transform: uppercase;
-  color: white;
+ /* color: white;*/
 }
 .footer {
   position: relative;
@@ -105,4 +109,10 @@ input:required:focus {
       }
 .text {
   color: white;
+}
+.border {
+  border: 2px solid grey;
+}
+.text1 {
+  color: grey;
 }
