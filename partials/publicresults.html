@@ -74,8 +74,10 @@
             <p class="white" ng-if= "!value.accepts_new_patients"> NO INFO FOUND</p>
             </div>
             <div><p class="upperCase">Insurance Accepted:</p>
+            <div ng-if = 'value.insurance_uids.length >0'>
             <p ng-repeat = "each in currentValue.insurances" class="white-text">{{each.insurance_plan.name}}</p>
             </div>
+            <p ng-if="value.insurance_uids.length === 0">NO Insurance Details</p></div>
             <div class="card-action">
               <button class="blue darken-4 text right" ng-click = "saveDoc()">Save to your profile</button>
             </div>

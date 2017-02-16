@@ -1,31 +1,21 @@
 capstone.controller("PublicresultsCtrl", function ($scope,doctors,$location,$http,user){
   $("#map1").addClass("ng-hide")
   $scope.doctorList = doctors
-  console.log(doctors)
-  console.log($scope.doctorList)
-
   var doctorSpecialities = {}
   for (var speckey in $scope.doctorList){
     doctorSpecialities = $scope.doctorList[speckey].specialties
-
   }
   $scope.doctorSpeciality = Object.values(doctorSpecialities)
-
-  console.log($scope.doctorSpeciality)
   var doctorPractices = {}
   for (var locKey in $scope.doctorList){
     doctorPractices = $scope.doctorList[locKey].practices
   }
   $scope.doctorPractices = Object.values(doctorPractices)
-  console.log($scope.doctorPractices)
   $scope.uid = user
   $scope.moreInfo = (value,key)=>{
-    console.log("value" , value)
     $scope.currentValue = value
+    console.log($scope.currentValue)
     $scope.key = key
-  // $scope.doctorPractices = Object.values(doctorPractices)
-  // console.log($scope.doctorPractices)
-      console.log("i have a user")
       $('#modal2').modal({
           dismissible: true, // Modal can be dismissed by clicking outside of the modal
           opacity: .5, // Opacity of modal background
@@ -37,8 +27,6 @@ capstone.controller("PublicresultsCtrl", function ($scope,doctors,$location,$htt
             console.log(modal, trigger);
           } // Callback for Modal close
           })
-
-      // $("#modal2").modal("open")
 
 }
 $scope.cancelInfo = ()=>{
@@ -74,10 +62,6 @@ $scope.moreLogin = ()=>{
 
 
   $scope.saveDoc = ()=>{
-  console.log("im docSave")
-  console.log($scope.key)
-  console.log(user.uid)
-
   $http.post(`https://frontendcapstone.firebaseio.com/users/${user.uid}/favoriteDoc/.json`,
   {
     Title : $scope.doctorList[$scope.key].profile.title,
@@ -90,22 +74,15 @@ $scope.moreLogin = ()=>{
     $location.path("/profile")
     $("#modal2").modal("close")
   })
-  // console.log($scope.favoriteDoc)
 }
 
       $scope.getMap = (value,key1)=>{
-        // $scope.key = key
-        console.log(key1)
-
         $("#map1").removeClass("ng-hide")
 
         $("#modal2").modal('close')
         $('html,body').animate({scrollTop: 0},'fast');
-        console.log(value)
         $scope.lat = value.lat
         $scope.lon = value.lon
-        console.log(value.lat)
-        console.log(value.lon)
         function initMap() {
         var uluru = {lat: value.lat, lng: value.lon};
         var map = new google.maps.Map(document.getElementById('map'), {

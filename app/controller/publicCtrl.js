@@ -1,49 +1,42 @@
 capstone.controller ("PublicCtrl", function ($http,$scope,doctorFactory,$location,AuthFactory) {
+//HIDING THE ALERT DIV IF NO DOCTORS FOUND
+  $(".alert").addClass("ng-hide")
 
-$(".alert").addClass("ng-hide")
- $('.parallax').parallax();
- $scope.speciality = doctorFactory.getSpeciality();
+  $('.parallax').parallax();
+ //GET SPECIALITY AND INSURANCE FROM DOCTOR FACTORY
+  $scope.speciality = doctorFactory.getSpeciality();
   $scope.insurance = doctorFactory.getInsurance();
-  // $scope.insuranceNames = Object.keys($scope.insurance)
-  // console.log($scope.insurance)
+ //GET DOCTORLIST FUNCTION
   $scope.getDoctor = ()=>{
     $scope.user_speciality = doctorFactory.getuserSpeciality($scope.speciality)
-
-    console.log($scope.user_speciality)
     $scope.user_insurance = doctorFactory.getuserInsurance($scope.user_insurance)
-    console.log($scope.user_insurance)
     $scope.zipcode = doctorFactory.getZipcode($scope.zipcode)
-    console.log($scope.zipcode)
     doctorFactory.getDoctorlist()
     .then((data)=>{
-      console.log(data)
-
       if(data.length === 0) {
-        console.log(data.length )
         $(".alert").removeClass("ng-hide")
       }
       else{
       $location.path("/publicresults")
-      // $scope.$apply()
     }
     })
 
       $scope.uid =  AuthFactory.getUid().uid
-      console.log("uid: ",$scope.uid)
       if (uid !== "") {
         $('.logoutButton').removeClass('ng-hide')
          $('.profileButton').removeClass('ng-hide')
          $('.logInButton').addClass("ng-hide")
          $('.registerButton').addClass("ng-hide")
-     //  console.log($scope.uid)
       }
   }
+  //SIDE NAV BAR ON SMALL DEVICES
   $('.button-collapse').sideNav({
      menuWidth: 100, // Default is 300
       edge: 'left', // Choose the horizontal origin
       closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
       draggable: true // Choose whether you can drag to open on touch screens
     });
+//CLOSE FUNCTION CLOSES THE NO DOCTORS ALERT
   $scope.close = ()=>{
     $(".alert").remove()
   }
