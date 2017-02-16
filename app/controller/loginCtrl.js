@@ -26,10 +26,10 @@ capstone.controller("LoginCtrl", function($scope,$location,AuthFactory){
     if($scope.user_email){
       firebase.auth().sendPasswordResetEmail($scope.user_email)
       .then(function() {
-         alert("Email sent.... check your inbox")
+         Materialize.toast("Email sent.... check your inbox",1500)
         })
         .catch( function(error) {
-          alert("Email not found")
+          Materialize.toast("Email not found",1000)
         });
     } else {
       Materialize.toast("Please enter the email address",2000)
