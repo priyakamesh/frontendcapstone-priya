@@ -18,11 +18,11 @@ capstone.controller("PublicresultsCtrl", function ($scope,doctors,$location,$htt
   }
   $scope.doctorPractices = Object.values(doctorPractices)
   console.log($scope.doctorPractices)
-$scope.uid = user
-$scope.moreInfo = (value,key)=>{
-  console.log("value" , value)
-  $scope.currentValue = value
-  $scope.key = key
+  $scope.uid = user
+  $scope.moreInfo = (value,key)=>{
+    console.log("value" , value)
+    $scope.currentValue = value
+    $scope.key = key
   // $scope.doctorPractices = Object.values(doctorPractices)
   // console.log($scope.doctorPractices)
       console.log("i have a user")
@@ -117,9 +117,14 @@ $scope.moreLogin = ()=>{
  //        });
  //      }
       // initMap()
-      $scope.getMap = (value)=>{
+      $scope.getMap = (value,key1)=>{
+        // $scope.key = key
+        console.log(key1)
+
         $("#map1").removeClass("ng-hide")
+
         $("#modal2").modal('close')
+        $('html,body').animate({scrollTop: 0},'fast');
         console.log(value)
         $scope.lat = value.lat
         $scope.lon = value.lon
@@ -128,7 +133,7 @@ $scope.moreLogin = ()=>{
         function initMap() {
         var uluru = {lat: value.lat, lng: value.lon};
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
+          zoom: 14,
           center: uluru
         });
         var marker = new google.maps.Marker({
