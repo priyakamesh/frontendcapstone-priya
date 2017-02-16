@@ -99,8 +99,9 @@ input:required:focus {
 }
 
 .person {
-  width:30px;
-  height:30px;
+  padding-top: .5em;
+  width:40px;
+  height:40px;
 }
 #map {
         width: 50%;
