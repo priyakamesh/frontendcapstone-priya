@@ -1,5 +1,5 @@
 <h1 class="padding">Registration Page</h1>
-<p class="padding">Please enter your information in the fields to get access to additional features such as Health plans accepted by the doctors, contact information.</p>
+<p class="padding">Please enter your information in the fields to get access to additional features such as Health plans accepted and contact information of the Doctors.</p>
 
 <div class="row" id="center">
   <form class="col s6" ng-submit = "register()" name="form">
@@ -16,7 +16,7 @@
         </div>
         <div class="row">
           <div class="input-field col s6">
-            <input  type="email" ng_model = "user_email" required>
+            <input  type="email" ng_model = "user_email" id="email" required>
             <label for="email" data-error="wrong" data-success="right">Email</label>
           </div>
           <div class="input-field col s6">
@@ -39,17 +39,17 @@
         </div>
         <div class="row">
           <div class="input-field col s6">
-            <input type="text" ng-model = "user_addressLine1" required>
+            <input type="text" ng-model = "user_addressLine1" required id="addressLine1">
             <label for="addressLine1">Address Line-1</label>
           </div>
           <div class="input-field col s6">
-            <input type="text" ng-model = "user_addressLine2"  optional>
+            <input type="text" ng-model = "user_addressLine2"  optional id="addressLine2">
             <label for="addressLine2">Address Line-2</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s6">
-            <input type="text" ng-model = "user_city">
+            <input type="text" ng-model = "user_city" id="city">
             <label for="city">City(optional)</label>
           </div>
           <div class="input-field col s3">
@@ -57,7 +57,7 @@
             <label for="autocomplete-input">State(optional)</label>
           </div>
           <div class="input-field col s3">
-            <input type="text" ng-model = "user_zipcode" required>
+            <input type="text" ng-model = "user_zipcode" required id="zipcode">
             <label for="zipcode">Zipcode</label>
           </div>
         </div>

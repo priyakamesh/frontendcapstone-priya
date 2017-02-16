@@ -117,3 +117,6 @@ input:required:focus {
 .text1 {
   color: grey;
 }
+.paddingLeft{
+  padding-left: 20px;
+}

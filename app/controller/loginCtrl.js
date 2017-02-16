@@ -3,7 +3,7 @@ capstone.controller("LoginCtrl", function($scope,$location,AuthFactory){
   $scope.login = ()=>{
     //CHECKING FOR USER INPUT IN LOGIN FORM
     if (($scope.user_email === undefined)&&($scope.user_password === undefined)){
-      alert("Please enter the email and password")
+      Materialize.toast("Please enter the email and password",2000)
     }
 //AUTH CHECK FROM AUTHFACTORY
     AuthFactory.setter($scope.user_email,$scope.user_password)
@@ -14,7 +14,7 @@ capstone.controller("LoginCtrl", function($scope,$location,AuthFactory){
           $scope.$apply()
       }
       else {
-        alert(data.message)
+        Materialize.toast("Login email/password not found",2000)
         $location.url("/login")
       }
 
