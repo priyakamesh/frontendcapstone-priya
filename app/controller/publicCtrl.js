@@ -23,7 +23,7 @@ $('html,body').animate({scrollTop: 0},'fast');
     })
 
       $scope.uid =  AuthFactory.getUid().uid
-      if (uid !== "") {
+      if ($scope.uid !== "") {
         $('.logoutButton').removeClass('ng-hide')
          $('.profileButton').removeClass('ng-hide')
          $('.logInButton').addClass("ng-hide")

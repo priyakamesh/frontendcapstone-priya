@@ -1,5 +1,14 @@
 capstone.controller("RegisterCtrl", function($scope,$http,AuthFactory,$location,user1){
 // $(".button-collapse").sideNav();
+$scope.firstName = "nss";
+$scope.lastName = "cohort17"
+$scope.user_email = "nss@cohort17.com"
+$scope.user_addressLine1 = "nss address"
+$scope.user_addressLine2 = "classroom no-3"
+$scope.user_city = "nashville"
+$scope.user_zipcode = "37210"
+
+
 $http.get(`states.json`)
 .then((data)=>{
   $scope.stateName = data.data
@@ -36,8 +45,7 @@ $scope.date = new Date();
     });
   }
   $scope.register = () => {
-    console.log("img.src", $scope.img)
-    console.log("im register")
+    if($scope.user_email === $scope.user_confirmEmail){
     AuthFactory.getter($scope.user_email,$scope.user_password)
     .then ((data)=> {
             console.log(data)
@@ -66,6 +74,9 @@ $scope.date = new Date();
 })
 
 }
-
-
+ else {
+  Materialize.toast("Emails have to match", 1000)
+  $("input[type='email']").focus()
+}
+}
 })
