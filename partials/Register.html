@@ -6,7 +6,7 @@
         <div class="row">
           <div class="input-field col s6">
 
-            <input  id="first_name" type="text" class="validate" ng_model = "firstName"  required>
+            <input  id="first_name" type="text" class="validate" ng_model = "firstName"  required autofocus>
             <label for="first_name">First Name</label>
           </div>
           <div class="input-field col s6">
@@ -16,7 +16,7 @@
         </div>
         <div class="row">
           <div class="input-field col s6">
-            <input  type="email" ng_model = "user_email" id="email" required>
+            <input  type="email" ng_model = "user_email" id="email" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" autofocus>
             <label for="email" data-error="wrong" data-success="right">Email</label>
           </div>
           <div class="input-field col s6">
