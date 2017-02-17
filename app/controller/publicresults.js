@@ -1,6 +1,7 @@
 capstone.controller("PublicresultsCtrl", function ($scope,doctors,$location,$http,user){
   $("#map1").addClass("ng-hide")
   $scope.doctorList = doctors
+  // console.log($scope.doctorList)
   var doctorSpecialities = {}
   for (var speckey in $scope.doctorList){
     doctorSpecialities = $scope.doctorList[speckey].specialties

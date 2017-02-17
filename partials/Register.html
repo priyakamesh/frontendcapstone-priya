@@ -6,17 +6,17 @@
         <div class="row">
           <div class="input-field col s6">
 
-            <input  id="first_name" type="text" class="validate" ng_model = "firstName"  required autofocus>
+            <input  id="first_name" type="text" class="validate" ng-model = "firstName"  required value="John">
             <label for="first_name">First Name</label>
           </div>
           <div class="input-field col s6">
-            <input id="last_name" type="text" class="validate" ng_model = "lastName"  required>
+            <input id="last_name" type="text" class="validate" ng-model = "lastName"  required>
             <label for="last_name">Last Name</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s6">
-            <input  type="email" ng_model = "user_email" id="email" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" autofocus>
+            <input  type="email" ng-model = "user_email" id="email" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$">
             <label for="email" data-error="wrong" data-success="right">Email</label>
           </div>
           <div class="input-field col s6">
@@ -28,7 +28,7 @@
         </div>
         <div class="row">
           <div class="input-field col s6" >
-            <input id="password" type="password" class="validate" ng_model = "user_password" required>
+            <input id="password" type="password" class="validate" ng-model = "user_password" required>
             <label for="password">Password</label>
           </div>
 
@@ -53,7 +53,7 @@
             <label for="city">City(optional)</label>
           </div>
           <div class="input-field col s3">
-            <input type="text" id="autocomplete-input" class="autocomplete" ng_model = "user_state">
+            <input type="text" id="autocomplete-input" class="autocomplete" ng-model = "user_state">
             <label for="autocomplete-input">State(optional)</label>
           </div>
           <div class="input-field col s3">

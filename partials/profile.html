@@ -3,7 +3,8 @@
  <div class="row right-align">
    <div class="card col s12 m4 ">
     <div class="card-content">
-    <img src="{{user.imageUrl}}" width="80px" height="80px">
+    <img ng-if="!user.imageUrl" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSbuNesTVALkVJwmDPaSJUEgV45w5Cr6yraSIvedhvmQP5elWRfgw" width="80px" height="80px">
+    <img ng-if = "user.imageUrl" src="{{user.imageUrl}}" width="80px" height="80px">
       <h4 class="card-title uppercase">{{user.Firstname}} {{user.Lastname}}</h4>
        <p>DOB:  {{userDob}}</p>
       <div>EMAIL:  {{ user.email }}</div>
@@ -42,7 +43,8 @@
                       <input id="first_name" type="text" ng-model="user.Address.zipcode">
                     </div>
                 </div>
-                <img src="{{user.imageUrl}}" id="myImg" height="70" width="70">
+                <img ng-if="!user.imageUrl" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSbuNesTVALkVJwmDPaSJUEgV45w5Cr6yraSIvedhvmQP5elWRfgw" width="80px" height="80px">
+    <img ng-if = "user.imageUrl" src="{{user.imageUrl}}" width="80px" height="80px">
                 <input type="file" name="file" id="fileInput">
 
               </form>
