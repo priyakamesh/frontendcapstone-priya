@@ -1,8 +1,8 @@
 capstone.controller("RegisterCtrl", function($scope,$http,AuthFactory,$location,user1){
 // $(".button-collapse").sideNav();
-$scope.firstName = "nss";
+$scope.firstName = "Demo";
 $scope.lastName = "cohort17"
-$scope.user_email = "nss@cohort17.com"
+$scope.user_email = "demo@cohort17.com"
 $scope.user_addressLine1 = "nss address"
 $scope.user_addressLine2 = "classroom no-3"
 $scope.user_city = "nashville"

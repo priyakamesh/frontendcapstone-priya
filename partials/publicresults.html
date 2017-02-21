@@ -66,7 +66,7 @@
             <div class="paddingDiv1">
             <p class="upperCase">contact info:</p>
             <div ng-repeat = "(key2,value) in currentValue.practices[key1].phones" class="text ">{{value.type}} : {{value.number}}</div></div>
-            <a target="_blank" href="{{value.website}}">
+            <a target="_blank" class="text" href="{{value.website}}">
             {{value.website}}</a>
             <div class="upperCase paddingDiv1">Accepts New Patient:
             <p class="white" ng-if= "value.accepts_new_patients === true"> YES</p>

@@ -56,6 +56,7 @@ capstone.controller("ProfileCtrl", function($http,$scope,AuthFactory,$location){
       .then(function(snapshot) {
         storageRef.child(fileList[0].name).getDownloadURL()
         .then((url)=>{
+          console.log(url)
           var img =document.getElementById("myImg")
           img.src = url;
           $scope.img = img.src;
@@ -96,5 +97,8 @@ $scope.cancel = ()=>{
   $location.url("/profile")
   $("#modal3").modal("close")
 }
-
+// $scope.myDoctorList =()=>{
+//   console.log("doctorlist")
+//   $('#hi').focus();
+// }
 })

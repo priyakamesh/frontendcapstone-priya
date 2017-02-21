@@ -43,8 +43,8 @@
                       <input id="first_name" type="text" ng-model="user.Address.zipcode">
                     </div>
                 </div>
-                <img ng-if="!user.imageUrl" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSbuNesTVALkVJwmDPaSJUEgV45w5Cr6yraSIvedhvmQP5elWRfgw" width="80px" height="80px">
-    <img ng-if = "user.imageUrl" src="{{user.imageUrl}}" width="80px" height="80px">
+                <img ng-if="!user.imageUrl" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSbuNesTVALkVJwmDPaSJUEgV45w5Cr6yraSIvedhvmQP5elWRfgw" width="80px" height="80px" id="myImg">
+                <img ng-if = "user.imageUrl" src="{{user.imageUrl}}" width="80px" height="80px" id="myImg">
                 <input type="file" name="file" id="fileInput">
 
               </form>
@@ -60,8 +60,8 @@
 
 <ul class="collapsible" data-collapsible="accordion">
   <li>
-    <div class="collapsible-header">MY DOCTOR LIST</div>
-    <div class="collapsible-body">
+    <div class="collapsible-header" ng-click="myDoctorList()">MY DOCTOR LIST</div>
+    <div class="collapsible-body" id="hi">
       <div class="row">
             <div class="col s12 m6 border"   ng-repeat = "(key1,each1) in doctorList" id = "{{key1}}">
 

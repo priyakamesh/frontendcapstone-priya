@@ -17,7 +17,7 @@
                 <label for="autocomplete-inputInsurance" class="paddingLeft">INSURANCE</label>
             </div>
             <div class="input-field col s12 m3">
-                  <input type="text" name="zipcode" ng-model="zipcode" id="zipcode" class="white" required pattern ="[0-9]{5}" title="zipcode should be 5 digits(only us zipcodes)">
+                  <input type="text" name="zipcode" ng-model="zipcode" id="zipcode" class="white" required pattern ="^[0-9]{5}(?:-[0-9]{4})?$" title="zipcode should be 5 digits(only us zipcodes)">
                    <label for = "zipcode" class="paddingLeft" >ZIPCODE</label>
             </div>
             <div class="input-field col s12 m3">
