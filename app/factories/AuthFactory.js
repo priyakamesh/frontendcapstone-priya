@@ -25,7 +25,7 @@ capstone.factory ("AuthFactory", function ($q,$location) {
     getUid:()=> {
       return UID = firebase.auth().currentUser
     },
-    getUser() {
+    getUser:()=> {
       console.log("hi")
       return $q((resolve, reject) => {
         console.log('hi2')

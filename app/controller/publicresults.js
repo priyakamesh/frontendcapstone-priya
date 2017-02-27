@@ -1,4 +1,7 @@
 capstone.controller("PublicresultsCtrl", function ($scope,doctors,$location,$http,user){
+  if(!doctors) {
+    $location.url("/")
+  }
   $("#map1").addClass("ng-hide")
   $scope.doctorList = doctors
   // console.log($scope.doctorList)
