@@ -79,9 +79,6 @@ input:required:focus {
   background-color: #efefef;
   text-align: center;
 }
-.parallax-container {
-      height: 700px;
-    }
 .footer1 {
   position: absolute;
   right: 0;
@@ -119,4 +116,52 @@ input:required:focus {
 }
 .paddingLeft{
   padding-left: 20px;
+}
+#map1 {
+  margin-left: 150px;
+}
+/*.background{
+  background-image: url('https://static01.nyt.com/images/2016/07/05/health/well_doctor/well_doctor-tmagArticle.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}*/
+.parallax-container{
+  height: 550px;
+}
+@media screen and (min-device-width : 320px) and (max-device-width : 600px){
+
+  body{
+    font-size: 3em;
+  }
+  .parallax {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+  }
+  .parallax img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  .margin{
+    margin-top: 50px;
+    /*margin-right: 100px;*/
+  }
+
+  .paddingLeft{
+    padding-top: 1em;
+    padding-left: 6em;
+  }
+input[type="text"]{
+  width: 500px;
+  height: 75px;
+  /*font-size: 1rem;*/
+}
 }

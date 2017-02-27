@@ -1,5 +1,5 @@
 
-capstone.factory ("AuthFactory", function ($q,$location,) {
+capstone.factory ("AuthFactory", function ($q,$location) {
   return {getter :(user_email,user_password) => {
     console.log(user_email,user_password)
     return firebase.auth().createUserWithEmailAndPassword(user_email,user_password)

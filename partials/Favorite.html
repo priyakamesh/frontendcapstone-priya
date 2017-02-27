@@ -1,10 +1,8 @@
 <h3 class="padding">Doctor List</h3>
-
-
 <div class="row paddingDiv">
             <div class="col s12 m6"   ng-repeat = "(key1,each1) in doctorList" id = "{{key1}}">
 
-              <div class="card  blue darken-2 text">
+              <div class="card  blue darken-1 text">
                 <div class="card-content">
                 <span class="card-title">{{each1.Title}} {{each1.first_name}} {{each1.last_name}}</span>
                 <span ng-repeat="(key, each) in each1.Speciality">

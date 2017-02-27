@@ -1,4 +1,5 @@
 capstone.controller("FavoriteCtrl", function($scope,$http,AuthFactory){
+   // $('.collapsible').collapsible({});
   $scope.uid = AuthFactory.getUid().uid
   //GET FAVORITE DOCTORS
   $http.get(`https://frontendcapstone.firebaseio.com/users/${$scope.uid}/favoriteDoc.json`)

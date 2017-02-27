@@ -6,7 +6,7 @@
 </div>
 <div class="row paddingDiv">
         <div class="col s12 m9 "   ng-repeat = "(key,value) in doctorList">
-          <div class="card  blue darken-2 left">
+          <div class="card  blue darken-1 left">
             <div class="card-content">
               <h5 class="card-title heading">{{value.profile.title}} {{value.profile.first_name}} {{value.profile.last_name}}</h5>
               <h6 class="heading">Speciality :</h6>
@@ -57,7 +57,7 @@
 
           <div class="card ">
 
-            <div class="card-content blue darken-2 border" ng-repeat = "(key1,value) in currentValue.practices">
+            <div class="card-content blue darken-1 border" ng-repeat = "(key1,value) in currentValue.practices">
             <p class="upperCase">office address:</p>
             <div class = "blue darken-4"><i class="material-icons">location_on</i><a class="text" target="_blank" href="https://www.google.com/maps/place/{{value.visit_address.street}},{{value.visit_address.city}},{{value.visit_address.zip}}"
                   >{{value.visit_address.street}}, {{value.visit_address.street2}},{{value.visit_address.city}}
