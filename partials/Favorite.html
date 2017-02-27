@@ -1,6 +1,6 @@
 <h3 class="padding">Doctor List</h3>
 <div class="row paddingDiv">
-            <div class="col s12 m6"   ng-repeat = "(key1,each1) in doctorList" id = "{{key1}}">
+            <div class="col s12 m9"   ng-repeat = "(key1,each1) in doctorList" id = "{{key1}}">
 
               <div class="card  blue darken-1 text">
                 <div class="card-content">
@@ -9,9 +9,9 @@
                 <p>{{each.name}}</p>
                 </span>
                 <div ng-repeat = "(key,each) in each1.office_address">  <h6>City: {{each.visit_address.city}}</h6>
-                                                                      Address: <div>{{each.visit_address.street}}
-                                                                      {{each.visit_address.street2}}</div>
-                                                                      <p>zip: {{each.visit_address.zip}}</p></div>
+                                                                      Address: <span>{{each.visit_address.street}}
+                                                                      {{each.visit_address.street2}}
+                                                                      <p>zip: {{each.visit_address.zip}}</p></span></div>
                 </div>
                 <button class="blue darken-4 right" ng-click = "delete(key1)">Remove from List</button>
                 </div>
