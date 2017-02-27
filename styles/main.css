@@ -1,6 +1,10 @@
 body {
   background-color: #efefef;
 }
+.rightmove{
+  margin-left: 2em;
+  margin-top: 3em;
+}
 .padding {
   margin-left: 100px;
   margin-top: 2rem;
