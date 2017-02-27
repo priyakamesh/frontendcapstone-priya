@@ -75,7 +75,8 @@ $scope.moreLogin = ()=>{
     office_address : $scope.doctorPractices
   })
   .then((data)=>{
-    $location.path("/profile")
+    // $location.path("/profile")
+    Materialize.toast("saved to your profile", 1000)
     $("#modal2").modal("close")
   })
 }
