@@ -135,6 +135,12 @@ input:required:focus {
 .parallax-container{
   height: 550px;
 }
+#toast-container {
+  top: auto !important;
+  right: auto !important;
+  bottom: 70%;
+  left:50%;
+}
 @media screen and (min-device-width : 320px) and (max-device-width : 600px){
 
   body{
