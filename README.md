@@ -39,4 +39,25 @@ Technologies Used:
 Screenshots of the Final Product
 
 * Home Page
-<img src="/images/Home.png" height="300px" width="300px">
+<img src="/images/Home.png" height="300px" width="600px">
+
+* Doctor List (filtered by zipcode, speciality and insurance)
+<img src="/images/doctorList.png" height="300px" width="600px">
+
+* Crediential Checking
+<img src="/images/crediential checking.png" height="300px" width="600px">
+
+* Login View
+<img src="/images/Login.png" height="300px" width="600px">
+
+* Registration View
+<img src="/images/registration.png" height="300px" width="600px">
+
+* Critical Information about the Doctors
+<img src="/images/criticalInfo.png" height="300px" width="600px">
+
+* Profile View
+<img src="/images/profile.png" height="300px" width="600px">
+
+* Favorites DoctorList
+<img src="/images/favorites.png" height="300px" width="600px">
