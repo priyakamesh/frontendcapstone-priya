@@ -61,3 +61,16 @@ Screenshots of the Final Product
 
 * Favorites DoctorList
 <img src="/images/favorites.png" height="300px" width="600px">
+
+Specs By:
+[Nashville Software School](https://github.com/nashville-software-school)
+[Scott Humphries](https://github.com/sscotth)
+[Caitlin Stein](https://github.com/C-Stein)
+[Dominic Serrano](https://github.com/DominicSerranoC14)
+
+
+
+
+Contributors:
+
+[Krishnapriya Sivasubramanian](https://github.com/priyakamesh)
