@@ -1,4 +1,4 @@
-# frontendcapstone-priya
+# front-End Capstone: SEARCHDOC
 
 Front End Capstone
 
@@ -63,9 +63,9 @@ Screenshots of the Final Product
 <img src="/images/favorites.png" height="300px" width="600px">
 
 Specs By:
-[Nashville Software School](https://github.com/nashville-software-school)
-[Scott Humphries](https://github.com/sscotth)
-[Caitlin Stein](https://github.com/C-Stein)
+[Nashville Software School](https://github.com/nashville-software-school),
+[Scott Humphries](https://github.com/sscotth),
+[Caitlin Stein](https://github.com/C-Stein),
 [Dominic Serrano](https://github.com/DominicSerranoC14)
 
 
