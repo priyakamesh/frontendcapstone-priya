@@ -2,8 +2,8 @@ capstone.controller ("PublicCtrl", function ($http,$scope,doctorFactory,$locatio
 //HIDING THE ALERT DIV IF NO DOCTORS FOUND
 $('html,body').animate({scrollTop: 0},'fast');
   $(".alert").addClass("ng-hide")
-
   $('.parallax').parallax();
+
  //GET SPECIALITY AND INSURANCE FROM DOCTOR FACTORY
   $scope.speciality = doctorFactory.getSpeciality();
   $scope.insurance = doctorFactory.getInsurance();

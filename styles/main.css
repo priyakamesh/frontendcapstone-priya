@@ -1,6 +1,13 @@
 body {
   background-color: #efefef;
 }
+.navFixed {
+  position: relative;
+  /*right: 0;*/
+  /*bottom: 0;*/
+  /*left: 0;*/
+  /*padding: 1rem;*/
+}
 .rightmove{
   margin-left: 2em;
   margin-top: 3em;
@@ -141,11 +148,14 @@ input:required:focus {
   bottom: 70%;
   left:50%;
 }
-@media screen and (min-device-width : 320px) and (max-device-width : 600px){
+@media screen and (min-device-height: 1500px){
 
   body{
     font-size: 2em;
     margin-top: 2em ;
+  }
+  .navFixed {
+    position: relative;
   }
   .uppercase{
     font-size: 2rem;
@@ -174,6 +184,9 @@ input:required:focus {
     min-width: 100%;
     min-height: 100%;
   }
+  .parallax-container {
+      height: 0px;
+    }
   .margin{
     margin-top: 50px;
     /*margin-right: 100px;*/

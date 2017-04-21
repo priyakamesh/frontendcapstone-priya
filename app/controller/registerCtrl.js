@@ -1,14 +1,5 @@
 capstone.controller("RegisterCtrl", function($scope,$http,AuthFactory,$location,user1){
 // $(".button-collapse").sideNav();
-$scope.firstName = "Demo";
-$scope.lastName = "cohort17"
-$scope.user_email = "demo@cohort17.com"
-$scope.user_addressLine1 = "nss address"
-$scope.user_addressLine2 = "classroom no-3"
-$scope.user_city = "nashville"
-$scope.user_zipcode = "37210"
-
-
 $http.get(`states.json`)
 .then((data)=>{
   $scope.stateName = data.data

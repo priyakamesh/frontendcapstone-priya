@@ -2,14 +2,14 @@
 <div id="toast-container"></div>
         <!-- <div class="row center"> -->
 <div class="parallax-container">
-    <div class="parallax"><img src="https://static01.nyt.com/images/2016/07/05/health/well_doctor/well_doctor-tmagArticle.jpg" alt="Unsplashed background img 1"></div>
+    <div class="parallax"><img src="https://static01.nyt.com/images/2016/07/05/health/well_doctor/well_doctor-tmagArticle.jpg" alt="Unsplashed background img 1" style="object-fit:cover"></div>
 <div class="container">
   <div class="row center-align margin">
         <form ng-submit = "getDoctor()">
           <h2>Find your doctor</h2>
           <div class="row center-align ">
             <div class="input-field col s12 m8 l3 offset-m2">
-                <input type="text" class="autocomplete white" id="autocomplete-inputSpeciality" ng-model = "speciality" required>
+                <input type="text" class="autocomplete white value1" id="autocomplete-inputSpeciality" ng-model = "speciality" required>
                 <label for="autocomplete-inputSpeciality" class="paddingLeft" style="font-size: 1.5rem;">SPECIALITY</label>
             </div>
             <div class="input-field col s12 m8 l3 offset-m2">
@@ -30,7 +30,7 @@
 </div>
 </div>
 </div>
- <div class="footer1 blue darken-4">
+ <div class="footer blue darken-4">
       Powered by <a class="brown-text text-lighten-1" target="_blank" href="https://developer.betterdoctor.com">Better Doctor</a>
       <!-- </div> -->
     </div>
