@@ -1,6 +1,18 @@
 body {
   background-color: #efefef;
 }
+body {
+  background: url('https://static01.nyt.com/images/2016/07/05/health/well_doctor/well_doctor-tmagArticle.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/*::-webkit-scrollbar {
+  display: none;
+}*/
+
 .navFixed {
   position: relative;
   /*right: 0;*/
@@ -85,7 +97,7 @@ input:required:focus {
  /* color: white;*/
 }
 .footer {
-  position: relative;
+  position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
@@ -94,7 +106,7 @@ input:required:focus {
   text-align: center;
 }
 .footer1 {
-  position: absolute;
+  position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
@@ -134,14 +146,6 @@ input:required:focus {
 #map1 {
   margin-left: 150px;
 }
-/*.background{
-  background-image: url('https://static01.nyt.com/images/2016/07/05/health/well_doctor/well_doctor-tmagArticle.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-}*/
-.parallax-container{
-  height: 550px;
-}
 #toast-container {
   top: auto !important;
   right: auto !important;
@@ -167,38 +171,72 @@ input:required:focus {
   .smallbtn {
     font-size: 1rem;
   }
-  .parallax {
-    position: fixed;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-  }
-  .parallax img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    min-width: 100%;
-    min-height: 100%;
-  }
-  .parallax-container {
-      height: 0px;
-    }
   .margin{
     margin-top: 50px;
     /*margin-right: 100px;*/
   }
-
+  .button {
+    padding-top: 2em;
+    padding-left: 6em;
+  }
   .paddingLeft{
     padding-top: 1em;
     padding-left: 6em;
+    font-size: 1.5rem;
   }
 input[type="text"]{
   width: 500px;
   height: 75px;
   /*font-size: 1rem;*/
 }
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .container {
+    margin-top: 400px;
+    /*font-size: 100px;*/
+  }
+  .button {
+    width: 70%;
+    height: 100px;
+    font-size: 50px;
+    /*padding: 2rem 6rem 4rem 6rem;*/
+  }
+  input[type="text"] {
+  width: 500px;
+  height: 75px;
+    margin-top: 10px;
+    font-size: 50px;
+  }
+  .paddingLeft{
+    padding-top: 1em;
+    padding-left: 6em;
+    font-size: 30%;
+  }
+}
+
+@media only screen and (min-device-width : 2560px) {
+  .container {
+    margin-top: 400px;
+  }
+  input[type="text"] {
+    width: 320px;
+    height: 100px;
+    margin-top: 10px;
+    font-size: 50px;
+  }
+  .button {
+    width: 450px;
+    height: 100px;
+    font-size: 50px;
+    padding: 2rem 6rem 4rem 6rem;
+    margin-left: 200px;
+  }
+
+  h2 {
+    font-size: 100px;
+  }
+  .paddingLeft{
+    padding-top: 1em;
+    padding-left: 6em;
+  }
 }
