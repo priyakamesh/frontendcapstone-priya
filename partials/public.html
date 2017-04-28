@@ -1,8 +1,8 @@
 <div class="alert center-align"><i class="material-icons">info_outline</i> Sorry no {{speciality}} Doctors found in {{zipcode}} with {{user_insurance}} insurance <button class="btn red" ng-click= "close()"> <i class="material-icons">close</i></button></div>
 <div id="toast-container"></div>
         <!-- <div class="row center"> -->
-<div class="parallax-container">
-    <div class="parallax"><img src="https://static01.nyt.com/images/2016/07/05/health/well_doctor/well_doctor-tmagArticle.jpg" alt="Unsplashed background img 1" style="object-fit:cover"></div>
+<!-- <div class="parallax-container"> -->
+    <!-- <div class="parallax"><img src="https://static01.nyt.com/images/2016/07/05/health/well_doctor/well_doctor-tmagArticle.jpg" alt="Unsplashed background img 1" style="object-fit:cover"></div> -->
 <div class="container">
   <div class="row center-align margin">
         <form ng-submit = "getDoctor()">
@@ -10,18 +10,18 @@
           <div class="row center-align ">
             <div class="input-field col s12 m8 l3 offset-m2">
                 <input type="text" class="autocomplete white value1" id="autocomplete-inputSpeciality" ng-model = "speciality" required>
-                <label for="autocomplete-inputSpeciality" class="paddingLeft" style="font-size: 1.5rem;">SPECIALITY</label>
+                <label for="autocomplete-inputSpeciality" class="paddingLeft">SPECIALITY</label>
             </div>
             <div class="input-field col s12 m8 l3 offset-m2">
                 <input type="text" class="autocomplete white" id="autocomplete-inputInsurance" ng-model = "user_insurance">
-                <label for="autocomplete-inputInsurance" class="paddingLeft" style="font-size: 1.5rem;">INSURANCE</label>
+                <label for="autocomplete-inputInsurance" class="paddingLeft">INSURANCE</label>
             </div>
             <div class="input-field col s12 m8 l3 offset-m2">
                   <input type="text" name="zipcode" ng-model="zipcode" id="zipcode" class="white" required pattern ="^[0-9]{5}(?:-[0-9]{4})?$" title="zipcode should be 5 digits(only us zipcodes)">
-                   <label for = "zipcode" class="paddingLeft" style="font-size: 1.5rem;">ZIPCODE</label>
+                   <label for = "zipcode" class="paddingLeft">ZIPCODE</label>
             </div>
             <div class="input-field col s12 m8 l3 offset-m2">
-              <input type="submit" value="SEARCH" class="btn  blue darken-4" class="paddingLeft" style="font-size: 1.5rem;">
+              <input type="submit" value="SEARCH" class="btn  blue darken-4 button">
             </div>
           </div>
 
